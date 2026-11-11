@@ -20,16 +20,16 @@
 
 ## 처음 한 번만 하는 설정
 
-1. **저장소 만들기**: https://github.com/new 에서 이름(예: `belt-graduation`)을 정하고 **Public**으로 만들어요. 무료 Pages는 공개 저장소만 돼요. README 등 다른 파일은 체크하지 말고 빈 저장소로 만드세요.
+1. **저장소 만들기**: https://github.com/new 에서 이름(예: `belt-graduation`)을 정하고 **Public**으로 만들어요. 이미 Private으로 만들었다면 Settings → General 맨 아래 Danger Zone → Change visibility에서 Public으로 바꾸면 돼요. 무료 Pages는 공개 저장소만 돼요. README 등 다른 파일은 체크하지 말고 빈 저장소로 만드세요.
 2. **업로드**: 빈 저장소 주소를 Claude에게 알려주면 올려줘요. 처음 올릴 때 GitHub 로그인 창이 한 번 떠요.
 3. **사이트 켜기**: 저장소 → Settings → Pages → Source를 *Deploy from a branch*로, Branch를 `main` / `/docs`로 설정하고 Save.
    잠시 뒤 `https://<내아이디>.github.io/belt-graduation/` 에 사이트가 열려요.
 4. **알림 받기 (ntfy)**
    1. 폰에 **ntfy** 앱을 설치해요 (Android Play 스토어 / iOS App Store).
-   2. 앱에서 **+** → 토픽 이름에 `jbnu-belt-4a0953fe5b` 입력 → 구독.
-      이름을 아는 사람은 누구나 같은 알림을 받을 수 있어서 알아보기 힘든 이름으로 정했어요.
+   2. 앱에서 **+** → 토픽 이름에 나만 아는 토픽 이름(예: `jbnu-belt-` 뒤에 아무 영문·숫자 10자 이상) 입력 → 구독.
+      토픽 이름을 아는 사람은 누구나 같은 알림을 받을 수 있어요. 이름은 이 저장소에 적지 말고 Secret에만 넣으세요.
    3. 저장소 → Settings → Secrets and variables → Actions → **New repository secret**
-      Name: `NTFY_TOPIC`, Secret: `jbnu-belt-4a0953fe5b`
+      Name: `NTFY_TOPIC`, Secret: 위에서 정한 토픽 이름
 5. **테스트**: 저장소 → Actions → "큰사람 포인트 공지 수집" → **Run workflow**를 눌러 수동 실행해 보세요. 성공하면 그다음부터 3시간마다 자동으로 돌아요.
    처음 실행할 때는 이미 있는 공지가 알림으로 쏟아지지 않게 알림을 보내지 않아요. 그다음 실행부터 **새로 올라온 공지만** 알려줘요.
 6. **폰 홈 화면에 추가**: 폰 브라우저로 사이트를 열고 공유(또는 ⋮) 메뉴에서 **홈 화면에 추가**를 누르면 앱처럼 쓸 수 있어요.
