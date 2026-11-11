@@ -26,6 +26,7 @@
       <button role="tab" data-tab="home" class="on">요약</button>
       <button role="tab" data-tab="belt">큰사람 벨트</button>
       <button role="tab" data-tab="grad">졸업 요건</button>
+      <button role="tab" data-tab="books">독서감상문</button>
       <button role="tab" data-tab="notice">큰사람 포인트 공지 <span class="badge-new" id="newCount" hidden></span></button>
     </nav>
   </div>
@@ -102,6 +103,30 @@
     </div>
   </section>
 
+  <!-- 독서감상문 (books.js) -->
+  <section data-panel="books" hidden>
+    <div class="card">
+      <div class="row-between">
+        <h2>독서감상문</h2>
+        <button class="ghost" id="bookNew">＋ 새 감상문</button>
+      </div>
+      <p class="hint">JBNU 권장도서로 독서인증제 보고서를 쓰고 분량을 확인해요. 글은 이 기기에만 저장되고 어디에도 올라가지 않아요. 신청: <span id="oasisPath"></span></p>
+      <div id="booksSummary"></div>
+    </div>
+    <div class="card" id="bookPicker" hidden>
+      <div class="row-between"><h2>책 고르기</h2><span class="hint" style="margin:0" id="bookCount"></span></div>
+      <div class="chips" id="bookGroups"></div>
+      <input type="search" id="bookSearch" placeholder="제목·저자·번호 검색 (예: 데미안, 카뮈, 41)">
+      <ul class="bk-results" id="bookResults"></ul>
+      <p class="hint" style="margin:8px 0 0">출처: <a id="booksSource" target="_blank" rel="noopener">2026 큰사람프로젝트 매뉴얼 · JBNU 권장도서 160선</a></p>
+    </div>
+    <div class="card">
+      <h2>내 감상문</h2>
+      <ul class="bk-list" id="bookList"></ul>
+    </div>
+    <div id="bookEditor" class="bk-editor" hidden></div>
+  </section>
+
   <!-- 공지 -->
   <section data-panel="notice" hidden>
     <div class="card">
@@ -136,5 +161,6 @@
 </dialog>
 
 <script src="app.js"></script>
+<script src="books.js"></script>
 </body>
 </html>

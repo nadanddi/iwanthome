@@ -222,3 +222,47 @@ dialog::backdrop { background: rgba(0, 0, 0, .4); }
 dialog h3 { margin-top: 0; }
 .dlg-actions { display: flex; justify-content: flex-end; gap: 8px; margin-top: 10px; }
 .dlg-actions button:not(.ghost) { border: 0; background: var(--accent); color: #fff; font: inherit; font-weight: 700; border-radius: 9px; padding: 7px 16px; cursor: pointer; }
+
+/* 독서감상문 (books.js) */
+.bk-steps { display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px; margin: 6px 0 10px; }
+@media (max-width: 560px) { .bk-steps { grid-template-columns: 1fr 1fr; } }
+.bk-step { display: flex; flex-direction: column; gap: 5px; background: var(--bg); border-radius: 10px; padding: 9px 11px; }
+.bk-step small { font-size: 12px; color: var(--muted); font-weight: 600; }
+.bk-step .b { align-self: flex-start; }
+.bk-results, .bk-list { list-style: none; margin: 10px 0 0; padding: 0; }
+.bk-results { max-height: 420px; overflow-y: auto; border: 1px solid var(--line); border-radius: 10px; }
+.bk-results li + li, .bk-list li + li { border-top: 1px solid var(--line); }
+.bk-results button, .bk-item { display: flex; align-items: center; gap: 10px; width: 100%; border: 0; background: none; color: var(--text); font: inherit; text-align: left; padding: 10px 12px; cursor: pointer; }
+.bk-results button:hover:not(:disabled), .bk-item:hover { background: var(--accent-soft); }
+.bk-results button:disabled { cursor: default; opacity: .55; }
+.bk-results .no { flex: none; width: 30px; font-size: 12px; font-weight: 700; color: var(--muted); text-align: right; }
+.bk-body { flex: 1; min-width: 0; display: flex; flex-direction: column; }
+.bk-body b { font-weight: 600; word-break: keep-all; overflow-wrap: anywhere; }
+.bk-body small { font-size: 12px; color: var(--muted); }
+.bk-results .empty, .bk-list .empty { padding: 12px; }
+.bk-list li.on { background: var(--accent-soft); border-radius: 10px; }
+.bk-item { flex-direction: column; align-items: flex-start; gap: 4px; padding: 10px 8px; border-radius: 10px; }
+.bk-title { font-weight: 700; word-break: keep-all; overflow-wrap: anywhere; }
+.bk-meta { display: flex; flex-wrap: wrap; gap: 6px; align-items: center; font-size: 12px; color: var(--muted); }
+.pill.sub { background: var(--accent-soft); color: var(--accent); }
+.bk-editor { display: flex; flex-direction: column; gap: 14px; scroll-margin-top: 110px; }
+.bk-head { display: flex; justify-content: space-between; align-items: flex-start; gap: 10px; }
+.bk-head h2 { word-break: keep-all; overflow-wrap: anywhere; }
+.bk-status { margin: 12px 0 2px; }
+.bk-meter { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; margin-top: 10px; }
+@media (max-width: 640px) { .bk-meter { grid-template-columns: 1fr; } }
+.bk-warn { display: block; font-size: 12px; color: var(--warn); margin-top: 4px; }
+h3.bk-sec { margin: 0; }
+.bk-field { display: flex; flex-direction: column; gap: 5px; margin-top: 12px; }
+.bk-field .lb { font-size: 13px; font-weight: 700; }
+.bk-field textarea { resize: vertical; line-height: 1.7; min-height: 90px; }
+.bk-n, .bk-sum { font-size: 12.5px; font-weight: 600; }
+.bk-sum { margin-top: 10px; padding: 9px 12px; border-radius: 10px; background: var(--bg); }
+.bk-sum small { color: var(--warn); margin-left: 6px; }
+.bk-n .ok, .bk-sum .ok { color: var(--good); }
+.bk-n .no, .bk-sum .no { color: var(--bad); }
+.bk-n .muted { color: var(--muted); font-weight: 500; }
+.bk-copy.on { background: var(--good-soft); color: var(--good); border-color: var(--good); }
+#bkChecks code { font-size: 12px; background: var(--bg); border-radius: 5px; padding: 1px 5px; word-break: break-all; }
+#bkChecks .check input:disabled { opacity: 1; }
+.b.bk-short { background: var(--warn-soft); color: var(--warn); }

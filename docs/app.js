@@ -661,7 +661,9 @@
   });
 
   // ------------------------------------------------------------ boot
-  function renderAll() { renderHome(); renderMyStatus(); renderBelt(); renderGrad(); renderNotices(); }
+  function renderAll() { renderHome(); renderMyStatus(); renderBelt(); renderGrad(); renderNotices(); BG.hooks.forEach((f) => f()); }
+  // 다른 스크립트(books.js)가 같은 상태 S를 쓰도록 공개 — 불러오기로 S가 바뀌어도 getter로 최신 값을 봄
+  const BG = (window.BeltGrad = { get S() { return S; }, save, $, esc, hooks: [] });
   async function load(path) { const r = await fetch(path, { cache: "no-cache" }); if (!r.ok) throw new Error(path); return r.json(); }
   Promise.all([load("data/belts.json"), load("data/graduation.json"), load("data/notices.json").catch(() => ({ notices: [] }))])
     .then(([b, g, n]) => {
