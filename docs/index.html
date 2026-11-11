@@ -69,12 +69,28 @@
   <section data-panel="grad" hidden>
     <div class="card">
       <div class="row-between">
+        <h2>오아시스 엑셀 불러오기</h2>
+        <button class="ghost" id="clearImport" hidden>불러온 값 지우기</button>
+      </div>
+      <p class="hint">오아시스에서 엑셀로 내려받은 파일을 넣으면 졸업 요건과 성적이 자동으로 채워져요. 파일은 이 기기 브라우저 안에서만 읽고 어디에도 보내지 않아요.</p>
+      <label class="drop" id="drop">
+        <input type="file" id="xlsxInput" accept=".xlsx,.xls" multiple>
+        <b>파일 선택</b> 또는 여기로 끌어다 놓기
+        <small>전공구분별 학점 · 교양이수학점 내역 · 취득성적 목록 (여러 개 한 번에 가능)</small>
+      </label>
+      <div id="importStatus"></div>
+    </div>
+    <div id="gradImported"></div>
+    <div class="card" id="gradManual">
+      <div class="row-between">
         <h2>졸업 요건</h2>
         <button class="ghost" id="editReq">✏️ 기준 수정</button>
       </div>
       <p class="notice-provisional" id="gradNote" hidden></p>
       <div id="gradCredits"></div>
-      <h3>기타 졸업 조건</h3>
+    </div>
+    <div class="card">
+      <h3 style="margin-top:0">기타 졸업 조건</h3>
       <div id="gradChecks"></div>
     </div>
   </section>

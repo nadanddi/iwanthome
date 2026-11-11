@@ -111,15 +111,15 @@
       .join("");
 
     // KPI
-    const tot = GRAD.credits.find((c) => c.total);
-    const totReq = reqOf(tot), totDone = num(S.grad.done[tot.id]);
+    const gt = gradTotals();
+    const totReq = gt.req, totDone = gt.done;
     const tb = targetBelt();
     const tp = beltProgress(tb);
     const red = BELTS.belts.find((b) => b.id === "RED");
     const cum = num(S.my.points);
     const ac = activeNotices();
     $("#kpis").innerHTML = [
-      { k: "졸업 학점", v: `${totDone}<small> / ${totReq}</small>`, s: totDone >= totReq ? "총 학점 충족" : `${totReq - totDone}학점 남음`, p: pct(totDone, totReq), go: "grad" },
+      { k: "졸업 학점", v: `${totDone}<small> / ${totReq}</small>`, s: !gt.imported ? "엑셀을 불러오면 자동으로 채워져요" : totDone >= totReq ? "총 학점 충족" : `${r1(totReq - totDone)}학점 남음${gt.taking ? ` · 수강 중 ${gt.taking}` : ""}`, p: pct(totDone, totReq), go: "grad" },
       { k: `${tb.name.split(" ")[0]} 진행률`, v: `${tp.overall}<small>%</small>`, s: tb.black ? `조건 ${tp.done}/${tp.total} 충족` : `필수지정 ${tp.reqDone}/${tp.reqTotal}`, p: tp.overall, go: "belt" },
       { k: "누적 큰사람 포인트", v: `${fmt(cum)}<small> / ${fmt(red.cumulative)}</small>`, s: cum >= red.cumulative ? "RED 누적 기준 충족" : `RED까지 ${fmt(red.cumulative - cum)}점`, p: pct(cum, red.cumulative), go: "belt" },
       { k: "열린 포인트 공지", v: `${ac.length}<small>건</small>`, s: `내 벨트 필수 ${ac.filter((n) => n.required && (n.belts || []).some((b) => MY_BELTS.includes(b))).length}건`, p: null, go: "notice" },
@@ -136,12 +136,14 @@
       if (p.bp < b.beltTotal) todo.push({ tag: b.id, color: b.color, t: `${b.id} 포인트 합계 ${fmt(b.beltTotal - p.bp)}점 더 (기준 ${b.beltTotal}점)`, how: "필수지정 + 필수선택 합계" });
       break; // 지금 단계 벨트만
     }
+    // 졸업 항목은 벨트 항목에 밀리지 않게 앞쪽(장학 조건 다음)에 넣음
+    todo.splice(S.my.violence ? 0 : 1, 0, ...gradGaps().map((g) => ({ tag: "졸업", color: "#1f9d55", t: `${/본전공|전체/.test(g.major) ? "" : g.major.split(" ")[0] + " "}${g.label} ${g.left}학점 더`, how: `${g.major} · 이번 학기 수강 중인 학점까지 뺀 값` })));
     if (S.my.held.RED && !S.my.held.BLACK) {
       const p = beltProgress(BELTS.belts.find((b) => b.id === "BLACK"));
       p.conds.filter((c) => !c.ok).forEach((c) => todo.push({ tag: "BLACK", color: BELT_COLORS.BLACK, t: c.label, how: c.cur ? `현재 ${c.cur}` : "" }));
     }
     $("#todo").innerHTML = todo.length
-      ? todo.slice(0, 8).map((x) => `<li><span class="tag" style="background:${x.color}">${esc(x.tag)}</span>${esc(x.t)}${x.how ? `<span class="how">${esc(x.how)}</span>` : ""}</li>`).join("")
+      ? todo.slice(0, 12).map((x) => `<li><span class="tag" style="background:${x.color}">${esc(x.tag)}</span>${esc(x.t)}${x.how ? `<span class="how">${esc(x.how)}</span>` : ""}</li>`).join("")
       : `<li class="empty">지금 단계에서 남은 항목이 없어요 🎉</li>`;
 
     // 추천 공지
@@ -237,6 +239,11 @@
   const reqOf = (c) => (S.grad.req[c.id] ?? c.required);
   let editingReq = false;
   function renderGrad() {
+    const imp = S.grad.imported;
+    const hasMajors = !!(imp && imp.majors && imp.majors.length);
+    $("#gradManual").hidden = hasMajors;
+    $("#clearImport").hidden = !imp;
+    $("#gradImported").innerHTML = imp ? renderImported(imp) : "";
     $("#gradNote").hidden = !GRAD.provisional;
     $("#gradNote").textContent = GRAD.note || "";
     $("#gradCredits").innerHTML = GRAD.credits.map((c) => `
@@ -257,6 +264,218 @@
       el.querySelector(".left").textContent = r === 0 ? "기준 없음" : d >= r ? "충족 ✓" : `${r - d}학점 남음`;
     }
   }
+  // ------------------------------------------------------------ 오아시스 엑셀 불러오기
+  const norm = (s) => String(s ?? "").replace(/\s+/g, "");
+  const toNum = (v) => { const m = String(v ?? "").match(/-?\d+(\.\d+)?/); return m ? Number(m[0]) : 0; };
+  const r1 = (n) => Math.round(n * 10) / 10;
+  const MAJOR_COLS = [
+    ["general", "교양최소/최대", "교양"], ["mreq", "전필", "전공필수"], ["msel", "전선", "전공선택"],
+    ["adv", "전공심화", "전공심화"], ["msum", "전공합계", "전공 합계"], ["common", "공통필수", "공통필수"],
+    ["pre", "선수", "선수과목"], ["free", "일반선택", "일반선택"], ["teach", "교직", "교직"],
+    ["mil", "군사학", "군사학"], ["total", "총학점", "총학점"],
+  ];
+  function headerIndex(rows, must) {
+    for (let i = 0; i < Math.min(rows.length, 12); i++) {
+      const h = (rows[i] || []).map(norm);
+      if (must.every((m) => h.includes(m))) return i;
+    }
+    return -1;
+  }
+  function detectKind(rows) {
+    if (headerIndex(rows, ["전공구분", "총학점"]) >= 0) return "majors";
+    if (headerIndex(rows, ["교양영역", "과목명"]) >= 0) return "general";
+    if (headerIndex(rows, ["교과목명", "평점"]) >= 0) return "grades";
+    return null;
+  }
+  function parseMajors(rows) {
+    const hi = headerIndex(rows, ["전공구분", "총학점"]);
+    const h = rows[hi].map(norm), at = (n) => h.indexOf(n);
+    const map = new Map();
+    for (const row of rows.slice(hi + 1)) {
+      const type = String(row[at("전공구분")] || "").trim(), kind = norm(row[at("구분")]);
+      if (!type || !kind) continue;
+      const name = String(row[at("학과")] || "").trim(), key = type + "|" + name;
+      if (!map.has(key)) map.set(key, { type, name, year: String(row[at("교과년도")] || ""), req: {}, max: {}, opt: {}, done: {}, taking: {} });
+      const m = map.get(key);
+      for (const [id, col] of MAJOR_COLS) {
+        const i = at(col); if (i < 0) continue;
+        const raw = String(row[i] ?? "");
+        if (kind.startsWith("졸업")) {
+          const parts = raw.split("/");
+          m.req[id] = toNum(parts[0]);
+          if (parts[1]) m.max[id] = toNum(parts[1]);
+          if (/선택/.test(raw)) m.opt[id] = true;
+        } else if (kind.startsWith("이수")) m.done[id] = toNum(raw);
+        else if (kind.startsWith("수강")) m.taking[id] = toNum(raw);
+      }
+    }
+    return [...map.values()];
+  }
+  function parseGeneral(rows) {
+    const hi = headerIndex(rows, ["교양영역", "과목명"]);
+    const h = rows[hi].map(norm), at = (n) => h.indexOf(n);
+    const doneCol = at("이수과목"), takingCol = at("수강중"), reqCol = at("필수/선택");
+    const doneCreditCol = doneCol >= 0 ? doneCol + 2 : -1;
+    const areas = {}, required = [];
+    let total = 0;
+    for (const row of rows.slice(hi + 1)) {
+      if (norm(row[reqCol]) === "소계") { total = toNum(row[doneCreditCol]); continue; }
+      const area = String(row[at("교양영역")] || "").replace(/\(\d{4}\)/, "").trim();
+      const course = String(row[at("과목명")] || "").trim();
+      if (!area || !course) continue;
+      const credit = toNum(row[doneCreditCol]);
+      const done = !!String(row[doneCol] || "").trim();
+      const taking = takingCol >= 0 && !!String(row[takingCol] || "").trim();
+      if (done) areas[area] = r1((areas[area] || 0) + credit);
+      if (norm(row[reqCol]) === "필수") required.push({ course, area, done, taking });
+    }
+    if (!total) total = r1(Object.values(areas).reduce((a, c) => a + c, 0));
+    return { areas, required, total };
+  }
+  function parseGrades(rows) {
+    const hi = headerIndex(rows, ["교과목명", "평점"]);
+    const h = rows[hi].map(norm), at = (n) => h.indexOf(n);
+    const sems = new Map();
+    let gp = 0, gc = 0, earned = 0, count = 0;
+    for (const row of rows.slice(hi + 1)) {
+      const name = String(row[at("교과목명")] || "").trim(); if (!name) continue;
+      if (String(row[at("미취득구분")] || "").trim()) continue; // 재이수로 지워진 성적 등
+      const cr = toNum(row[at("학점")]), pv = String(row[at("평점")] ?? "").trim();
+      earned += cr; count++;
+      if (pv === "" || isNaN(Number(pv))) continue; // P/F 과목
+      const year = String(row[at("연도")] || ""), term = String(row[at("학기")] || "");
+      gp += cr * Number(pv); gc += cr;
+      const k = `${year} ${term}`;
+      const s = sems.get(k) || { label: k, year: Number(year), regular: /^[12]학기$/.test(term), order: Number(year) * 10 + (term.startsWith("1") ? 1 : term.startsWith("2") ? 3 : term.includes("여름") ? 2 : 4), p: 0, c: 0 };
+      s.p += cr * Number(pv); s.c += cr; sems.set(k, s);
+    }
+    const list = [...sems.values()].sort((a, b) => a.order - b.order).map((s) => ({ label: s.label, regular: s.regular, gpa: Math.round((s.p / s.c) * 100) / 100, credits: s.c }));
+    const lastSem = [...list].reverse().find((s) => s.regular) || null;
+    return { overall: gc ? Math.round((gp / gc) * 100) / 100 : null, earned: r1(earned), count, semesters: list, lastSem };
+  }
+  function loadXLSX() {
+    if (window.XLSX) return Promise.resolve();
+    return new Promise((res, rej) => {
+      const s = document.createElement("script");
+      s.src = "https://cdn.jsdelivr.net/npm/xlsx@0.18.5/dist/xlsx.full.min.js";
+      s.onload = res; s.onerror = () => rej(new Error("엑셀 읽기 도구를 불러오지 못했어요. 인터넷 연결을 확인하세요."));
+      document.head.appendChild(s);
+    });
+  }
+  async function importFiles(files) {
+    const box = $("#importStatus");
+    box.innerHTML = `<div class="imp-msg">읽는 중…</div>`;
+    try {
+      await loadXLSX();
+      const imp = { ...(S.grad.imported || {}) }, ok = [], bad = [];
+      for (const f of files) {
+        try {
+          const wb = XLSX.read(await f.arrayBuffer(), { type: "array" });
+          const rows = XLSX.utils.sheet_to_json(wb.Sheets[wb.SheetNames[0]], { header: 1, defval: "", raw: false });
+          const kind = detectKind(rows);
+          if (kind === "majors") { imp.majors = parseMajors(rows); ok.push("전공구분별 학점"); }
+          else if (kind === "general") { imp.general = parseGeneral(rows); ok.push("교양이수학점 내역"); }
+          else if (kind === "grades") { imp.grades = parseGrades(rows); ok.push("취득성적 목록"); }
+          else bad.push(f.name);
+        } catch (_) { bad.push(f.name); }
+      }
+      if (ok.length) {
+        imp.importedAt = new Date().toISOString();
+        S.grad.imported = imp;
+        if (imp.grades && imp.grades.lastSem) S.my.gpa = imp.grades.lastSem.gpa;
+        save(); renderAll();
+      }
+      $("#importStatus").innerHTML =
+        (ok.length ? `<div class="imp-msg">✓ ${ok.join(", ")} 불러왔어요.${imp.grades?.lastSem ? ` 직전학기 성적(${esc(imp.grades.lastSem.label)} ${imp.grades.lastSem.gpa})을 벨트 탭에도 넣었어요.` : ""}</div>` : "") +
+        (bad.length ? `<div class="imp-msg err">✗ 형식을 알아보지 못한 파일: ${bad.map(esc).join(", ")}</div>` : "");
+    } catch (e) {
+      box.innerHTML = `<div class="imp-msg err">${esc(e.message)}</div>`;
+    }
+  }
+  const drop = $("#drop");
+  $("#xlsxInput").addEventListener("change", (e) => { if (e.target.files.length) importFiles([...e.target.files]); e.target.value = ""; });
+  ["dragenter", "dragover"].forEach((ev) => drop.addEventListener(ev, (e) => { e.preventDefault(); drop.classList.add("over"); }));
+  ["dragleave", "drop"].forEach((ev) => drop.addEventListener(ev, (e) => { e.preventDefault(); drop.classList.remove("over"); }));
+  drop.addEventListener("drop", (e) => { if (e.dataTransfer.files.length) importFiles([...e.dataTransfer.files]); });
+  $("#clearImport").addEventListener("click", () => {
+    if (!confirm("불러온 엑셀 값을 이 기기에서 지울까요?")) return;
+    delete S.grad.imported; save(); $("#importStatus").innerHTML = ""; renderAll();
+  });
+
+  // 불러온 값으로 졸업 진행 계산
+  function gradTotals() {
+    const imp = S.grad.imported;
+    if (imp && imp.majors && imp.majors.length) {
+      const main = imp.majors.find((m) => m.type.includes("본전공")) || imp.majors[0];
+      const done = r1(imp.majors.reduce((a, m) => a + num(m.done.total), 0));
+      const taking = r1(imp.majors.reduce((a, m) => a + num(m.taking.total), 0));
+      return { req: num(main.req.total), done, taking, imported: true };
+    }
+    const tot = GRAD.credits.find((c) => c.total);
+    return { req: num(reqOf(tot)), done: num(S.grad.done[tot.id]), taking: 0, imported: false };
+  }
+  // 수강 중인 학점까지 넣고도 남는 졸업 항목
+  function gradGaps() {
+    const imp = S.grad.imported, out = [];
+    if (!imp || !imp.majors) return out;
+    for (const m of imp.majors) {
+      for (const [id, , label] of MAJOR_COLS) {
+        if (id === "total" || id === "msum" || !m.req[id] || m.opt[id]) continue;
+        const left = r1(m.req[id] - num(m.done[id]) - num(m.taking[id]));
+        if (left > 0) out.push({ major: `${m.type}${m.name ? " " + m.name : ""}`, label, left });
+      }
+    }
+    const t = gradTotals();
+    const left = r1(t.req - t.done - t.taking);
+    if (left > 0) out.unshift({ major: "전체", label: "총 학점", left });
+    return out;
+  }
+  function stackBar(done, taking, req) {
+    const a = req ? Math.min(100, (done / req) * 100) : 100;
+    const b = req ? Math.min(100 - a, (taking / req) * 100) : 0;
+    return `<div class="bar${a >= 100 ? " good" : ""}"><i style="width:${a}%"></i>${b > 0 ? `<i class="taking" style="width:${b}%"></i>` : ""}</div>`;
+  }
+  function renderImported(imp) {
+    let html = "";
+    if (imp.majors && imp.majors.length) {
+      const t = gradTotals();
+      const left = r1(t.req - t.done), leftAfter = r1(t.req - t.done - t.taking);
+      html += `<div class="card"><h2>졸업 학점</h2>
+        <div class="big-total"><b>${t.done}</b><span>/ ${t.req}학점 이수${t.taking ? ` · 이번 학기 ${t.taking}학점 수강 중` : ""}</span></div>
+        ${stackBar(t.done, t.taking, t.req)}
+        <div class="legend"><span><i></i>이수</span>${t.taking ? `<span><i class="t"></i>수강 중</span>` : ""}<span>${left > 0 ? `${left}학점 남음${t.taking ? ` (이번 학기 끝나면 ${Math.max(0, leftAfter)}학점)` : ""}` : "총 학점 충족 ✓"}</span></div>
+        <div class="hint" style="margin:10px 0 0">불러온 날짜: ${new Date(imp.importedAt).toLocaleDateString("ko-KR")} · 학기가 끝나면 다시 내려받아 넣어 주세요.</div></div>`;
+      for (const m of imp.majors) {
+        const rows = MAJOR_COLS.filter(([id]) => id !== "total" && (m.req[id] || m.done[id] || m.taking[id]));
+        html += `<div class="card"><h2>${esc(m.type)} · ${esc(m.name)} <span class="hint">${esc(m.year)} 교육과정${m.type.includes("본전공") ? "" : ` · 총 ${m.req.total || 0}학점`}</span></h2>
+          ${rows.map(([id, , label]) => {
+            const d = num(m.done[id]), tk = num(m.taking[id]), r = num(m.req[id]);
+            const after = r1(r - d - tk);
+            let note = r === 0 ? "기준 없음" : d >= r ? "충족 ✓" : after <= 0 ? "이번 학기 끝나면 충족" : `${r1(r - d)}학점 남음${tk ? ` · 수강 후 ${after}학점` : ""}`;
+            if (m.max[id] && d > m.max[id]) note += ` · 최대 ${m.max[id]}학점까지만 인정`;
+            return `<div class="credit"><div class="head"><span class="name">${label}${m.opt[id] ? `<span class="opt">선택</span>` : ""}</span>
+              <span class="nums"><b>${d}</b>${tk ? ` + ${tk}` : ""} / ${r}${m.max[id] ? `~${m.max[id]}` : ""}학점</span></div>
+              ${stackBar(d, tk, r)}<div class="left">${note}${m.opt[id] ? " · 다전공(복수전공 등)을 하면 대신 인정되는 경우가 많아요. 학과에 확인하세요." : ""}</div></div>`;
+          }).join("")}</div>`;
+      }
+    }
+    if (imp.general) {
+      const g = imp.general;
+      html += `<div class="card"><h2>교양 이수 내역 <span class="hint">총 ${g.total}학점</span></h2>
+        <div class="course-list">${Object.entries(g.areas).map(([a, c]) => `<span class="tk">${esc(a)} ${c}학점</span>`).join("")}</div>
+        ${g.required.length ? `<h3>필수 교양 과목</h3><div class="course-list">${g.required.map((c) => `<span class="${c.done ? "" : c.taking ? "tk" : "no"}">${c.done ? "✓" : c.taking ? "수강 중" : "✗"} ${esc(c.course)}</span>`).join("")}</div>` : ""}</div>`;
+    }
+    if (imp.grades) {
+      const gr = imp.grades;
+      html += `<div class="card"><h2>성적</h2><div class="stat-row" style="margin-top:0">
+        <div class="stat"><div class="k">전체 평점</div><div class="v">${gr.overall ?? "-"}</div></div>
+        <div class="stat"><div class="k">직전학기 ${gr.lastSem ? `(${esc(gr.lastSem.label)})` : ""}</div><div class="v">${gr.lastSem ? gr.lastSem.gpa : "-"}</div></div>
+        <div class="stat"><div class="k">취득 학점</div><div class="v">${gr.earned}</div></div></div>
+        <div class="hint" style="margin:10px 0 0">벨트 장학 기준: 직전학기 2.75 이상 ${gr.lastSem && gr.lastSem.gpa >= 2.75 ? "✓" : ""} · BLACK 기준② 4.0 이상 ${gr.lastSem && gr.lastSem.gpa >= 4 ? "✓" : ""}. 학교 공식 평점과 소수점이 조금 다를 수 있어요.</div></div>`;
+    }
+    return html;
+  }
+
   $("#editReq").addEventListener("click", () => { editingReq = !editingReq; $("#editReq").textContent = editingReq ? "✔ 수정 끝" : "✏️ 기준 수정"; renderGrad(); });
 
   // ------------------------------------------------------------ 공지
