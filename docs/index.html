@@ -53,8 +53,15 @@
   <section data-panel="belt" hidden>
     <div class="card">
       <h2>내 큰사람 현황</h2>
-      <p class="hint">오아시스 › 큰사람프로젝트 관리 › 벨트이수현황에서 숫자를 보고 입력하세요. 입력값은 이 기기에 저장돼요.</p>
+      <p class="hint">승인내역 엑셀을 넣으면 포인트·외국어 등급·필수 항목이 자동으로 채워져요. 엑셀에 없는 건 직접 입력하거나 체크하세요. 값은 이 기기에만 저장돼요.</p>
+      <label class="drop" style="margin-bottom:14px">
+        <input type="file" accept=".xlsx,.xls" multiple>
+        <b>포인트 승인내역 엑셀 넣기</b>
+        <small>오아시스 › 큰사람프로젝트 관리 › 포인트 신청/승인내역 → 엑셀 저장</small>
+      </label>
+      <div class="importStatus"></div>
       <div class="form-grid" id="myStatus"></div>
+      <div id="pointsLog"></div>
     </div>
     <div class="belt-switch" id="beltSwitch"></div>
     <div id="beltDetail"></div>
@@ -74,11 +81,11 @@
       </div>
       <p class="hint">오아시스에서 엑셀로 내려받은 파일을 넣으면 졸업 요건과 성적이 자동으로 채워져요. 파일은 이 기기 브라우저 안에서만 읽고 어디에도 보내지 않아요.</p>
       <label class="drop" id="drop">
-        <input type="file" id="xlsxInput" accept=".xlsx,.xls" multiple>
+        <input type="file" accept=".xlsx,.xls" multiple>
         <b>파일 선택</b> 또는 여기로 끌어다 놓기
-        <small>전공구분별 학점 · 교양이수학점 내역 · 취득성적 목록 (여러 개 한 번에 가능)</small>
+        <small>전공구분별 학점 · 교양이수학점 내역 · 취득성적 목록 · 포인트 승인내역 (여러 개 한 번에 가능)</small>
       </label>
-      <div id="importStatus"></div>
+      <div class="importStatus"></div>
     </div>
     <div id="gradImported"></div>
     <div class="card" id="gradManual">
