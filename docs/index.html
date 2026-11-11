@@ -1,0 +1,117 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>벨트를 따자 졸업을 하자</title>
+<meta name="description" content="전북대 큰사람 벨트·졸업요건·큰사람 포인트 공지를 한눈에">
+<meta name="theme-color" content="#2f6fdb">
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="icon" href="icon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="icon.svg">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700;800&display=swap">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="top">
+  <div class="wrap">
+    <div class="brand">
+      <span class="logo" aria-hidden="true">🥋</span>
+      <div>
+        <h1>벨트를 따자 졸업을 하자</h1>
+        <p class="sub" id="updated">불러오는 중…</p>
+      </div>
+    </div>
+    <nav class="tabs" role="tablist">
+      <button role="tab" data-tab="home" class="on">요약</button>
+      <button role="tab" data-tab="belt">큰사람 벨트</button>
+      <button role="tab" data-tab="grad">졸업 요건</button>
+      <button role="tab" data-tab="notice">큰사람 포인트 공지 <span class="badge-new" id="newCount" hidden></span></button>
+    </nav>
+  </div>
+</header>
+
+<main class="wrap">
+  <!-- 요약 -->
+  <section data-panel="home">
+    <div class="deadline-bar" id="deadlineBar"></div>
+    <div class="kpis" id="kpis"></div>
+    <div class="grid2">
+      <div class="card">
+        <h2>다음에 할 일</h2>
+        <ol class="todo" id="todo"></ol>
+      </div>
+      <div class="card">
+        <h2>지금 신청할 만한 공지</h2>
+        <ul class="mini-notices" id="homeNotices"></ul>
+        <button class="link-btn" data-goto="notice">공지 전체 보기 →</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- 벨트 -->
+  <section data-panel="belt" hidden>
+    <div class="card">
+      <h2>내 큰사람 현황</h2>
+      <p class="hint">오아시스 › 큰사람프로젝트 관리 › 벨트이수현황에서 숫자를 보고 입력하세요. 입력값은 이 기기에 저장돼요.</p>
+      <div class="form-grid" id="myStatus"></div>
+    </div>
+    <div class="belt-switch" id="beltSwitch"></div>
+    <div id="beltDetail"></div>
+    <div class="card muted-card">
+      <h3>장학생 선발 공통 조건</h3>
+      <ul id="scholarRules"></ul>
+      <p class="hint">출처: <a id="beltSource" target="_blank" rel="noopener">2026 큰사람프로젝트 매뉴얼 · 2학기 장학생 선발 안내</a></p>
+    </div>
+  </section>
+
+  <!-- 졸업 -->
+  <section data-panel="grad" hidden>
+    <div class="card">
+      <div class="row-between">
+        <h2>졸업 요건</h2>
+        <button class="ghost" id="editReq">✏️ 기준 수정</button>
+      </div>
+      <p class="notice-provisional" id="gradNote" hidden></p>
+      <div id="gradCredits"></div>
+      <h3>기타 졸업 조건</h3>
+      <div id="gradChecks"></div>
+    </div>
+  </section>
+
+  <!-- 공지 -->
+  <section data-panel="notice" hidden>
+    <div class="card">
+      <div class="row-between">
+        <h2>큰사람 포인트 공지</h2>
+        <a class="ghost" href="https://career.jbnu.ac.kr/bbs/career/3682/artclList.do" target="_blank" rel="noopener">취업진로지원과 게시판 ↗</a>
+      </div>
+      <p class="hint">교내공지와 취업진로지원과에서 3시간마다 자동으로 모아요. 점수와 마감일은 공지 글에서 자동으로 읽은 값이라 틀릴 수 있으니 원문을 꼭 확인하세요.</p>
+      <div class="chips" id="noticeFilters"></div>
+      <input type="search" id="noticeSearch" placeholder="공지 제목 검색 (예: NCS, 면접, 토익)">
+      <ul class="notices" id="noticeList"></ul>
+    </div>
+  </section>
+
+  <footer class="foot">
+    <button class="ghost" id="exportBtn">내 입력값 내보내기</button>
+    <button class="ghost" id="importBtn">불러오기</button>
+    <p class="hint">폰과 PC에서 같은 값을 쓰려면 한쪽에서 내보낸 코드를 다른 쪽에서 불러오세요.</p>
+  </footer>
+</main>
+
+<dialog id="dlg">
+  <form method="dialog">
+    <h3 id="dlgTitle"></h3>
+    <p class="hint" id="dlgHint"></p>
+    <textarea id="dlgText" rows="5"></textarea>
+    <div class="dlg-actions">
+      <button value="cancel" class="ghost">닫기</button>
+      <button value="ok" id="dlgOk">확인</button>
+    </div>
+  </form>
+</dialog>
+
+<script src="app.js"></script>
+</body>
+</html>

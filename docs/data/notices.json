@@ -1,0 +1,745 @@
+{
+ "updated": "2026-11-11T15:49+09:00",
+ "notices": [
+  {
+   "id": "main-219692",
+   "source": "교내공지",
+   "title": "(끌어올림)[취업진로지원과]건지포럼 5차(11.20.(금) 16:00-17:30)//큰사람포인트 20점, 통합전공탐색 1시간 인정",
+   "posted": "2026-11-11",
+   "url": "https://www.jbnu.ac.kr/web/Board/219692/detailView.do?pageIndex=1&menu=2377",
+   "summary": ">",
+   "points": 20,
+   "belts": [],
+   "deadline": null,
+   "required": false,
+   "firstSeen": "2026-11-11T15:49+09:00"
+  },
+  {
+   "id": "main-219684",
+   "source": "교내공지",
+   "title": "[우수기업탐방] 한국식품산업클러스터진흥원 기업탐방 모집 안내 (큰사람포인트 15P 지급)",
+   "posted": "2026-11-11",
+   "url": "https://www.jbnu.ac.kr/web/Board/219684/detailView.do?pageIndex=1&menu=2377",
+   "summary": ">\n 📢 한국식품산업클러스터진흥원 기업탐방 참여자 모집\n 식품산업 현장과 다양한 직무가 궁금한 학생 여러분!\n 기관 소개부터 채용안내, 현직자와의 대화, 기업 지원시설 견학까지 함께할 참여자를 모집합니다 😊\n 🔗 신청 링크 : https://career.jbnu.ac.kr/career/21972/subview.do \n 🔍 신청 방법 : 취업진로지원과 홈페이지 접속 후 검색창에 「기업탐방」 검색하여 신청 📝\n 📅 탐방일시: 2026. 11. 19.(목) 12:30~16:30\n ※ 학교 출발 및 복귀 시간 포함\n 👥 모집인원: 40명\n 🏢 탐방기관: 한국식품산업클러스터진흥원 \n 🔎 주요 프로그램\n • 기관 및 보유 인프라 소개\n • 기업 지원시설 견학\n (청년식품 창업센터, 기능성식품제형센터, 식품패키징센터 등",
+   "points": 15,
+   "belts": [],
+   "deadline": null,
+   "required": false,
+   "firstSeen": "2026-11-11T15:49+09:00"
+  },
+  {
+   "id": "main-219680",
+   "source": "교내공지",
+   "title": "[YELLOW BELT 필수선택]취업 트렌드 특강(5-6차) 신청 안내<※대진설 1시간인정>",
+   "posted": "2026-11-11",
+   "url": "https://www.jbnu.ac.kr/web/Board/219680/detailView.do?pageIndex=1&menu=2377",
+   "summary": ">\n 취업진로지원과 바로가기",
+   "points": null,
+   "belts": [
+    "YELLOW"
+   ],
+   "deadline": null,
+   "required": true,
+   "firstSeen": "2026-11-11T15:49+09:00"
+  },
+  {
+   "id": "main-219679",
+   "source": "교내공지",
+   "title": "[YELLOW BELT 필수] 2026년 2학기 해외취업 특강(※2차) 신청 안내",
+   "posted": "2026-11-11",
+   "url": "https://www.jbnu.ac.kr/web/Board/219679/detailView.do?pageIndex=1&menu=2377",
+   "summary": ">\n 취업진로지원과 바로가기",
+   "points": null,
+   "belts": [
+    "YELLOW"
+   ],
+   "deadline": null,
+   "required": true,
+   "firstSeen": "2026-11-11T15:49+09:00"
+  },
+  {
+   "id": "career-405759",
+   "source": "취업진로지원과",
+   "title": "**오늘 마감** [레드/블루벨트 필수선택] 2026학년도 2학기 NCS 및 기업 직무적성",
+   "posted": "2026-11-11",
+   "url": "https://career.jbnu.ac.kr/bbs/career/3682/405759/artclView.do?layout=unknown",
+   "loginRequired": true,
+   "summary": "",
+   "points": null,
+   "belts": [
+    "BLUE",
+    "RED"
+   ],
+   "deadline": "2026-11-11",
+   "required": true,
+   "firstSeen": "2026-11-11T15:49+09:00"
+  },
+  {
+   "id": "career-405738",
+   "source": "취업진로지원과",
+   "title": "[RED/BLUE필수]2026년 2차 직무 자격증 과정 참여 안내(★오늘 18시까지★)",
+   "posted": "2026-11-11",
+   "url": "https://career.jbnu.ac.kr/bbs/career/3682/405738/artclView.do?layout=unknown",
+   "loginRequired": true,
+   "summary": "",
+   "points": null,
+   "belts": [
+    "BLUE",
+    "RED"
+   ],
+   "deadline": "2026-11-11",
+   "required": true,
+   "firstSeen": "2026-11-11T15:49+09:00"
+  },
+  {
+   "id": "career-405736",
+   "source": "취업진로지원과",
+   "title": "2026년 2학기 취업 트렌드 특강(5-6차) 신청안내 대진설 1시간인정",
+   "posted": "2026-11-11",
+   "url": "https://career.jbnu.ac.kr/bbs/career/3682/405736/artclView.do?layout=unknown",
+   "loginRequired": true,
+   "summary": "",
+   "points": null,
+   "belts": [],
+   "deadline": "2026-11-15",
+   "required": false,
+   "firstSeen": "2026-11-11T15:49+09:00"
+  },
+  {
+   "id": "main-219645",
+   "source": "교내공지",
+   "title": "[전북국제개발협력센터] 제4회 전북 개발협력 포럼 개최 (11/16) - 참여자 선착순 포럼 기념품 지급! / 큰사람 포인트 10점 지급!",
+   "posted": "2026-11-10",
+   "url": "https://www.jbnu.ac.kr/web/Board/219645/detailView.do?pageIndex=1&menu=2377",
+   "summary": ">\n 안녕하세요, 전북국제개발협력센터입니다. \n 전북특별자치도에서 주관하는 「제4회 전북 개발협력 포럼」 이 오는 11월 16일 (월) 전북대학교에서 개최됩니다. \n 이번 포럼은 「AI를 더한 국제개발협력의 새로운 전환, 전북의 미래를 열다」를 주제로, AI 및 디지털 기술을 활용한 국제개발협\n 력(ODA)의 미래와 전북 지역의 새로운 개발협력 방향을 함께 모색하는 자리입니다.\n 국제개발협력 및 ODA 분야에 관심 있는 모든 분들의 많은 관심과 참여 바랍니다.\n ■ 행사 개요\n - 행사명: 제4회 전북 개발협력 포럼 \n - 주제: AI를 더한 국제개발협력의 새로운 전환, 전북의 미래를 열다 \n - 일시: 2026. 11. 16.(월) 13:30~16:30 \n - 장소: 전북대학교 진수당 바오로홀(2층) \n ",
+   "points": 10,
+   "belts": [],
+   "deadline": null,
+   "required": false,
+   "firstSeen": "2026-11-11T15:49+09:00"
+  },
+  {
+   "id": "main-219625",
+   "source": "교내공지",
+   "title": "신입생-현직자 진로 멘토링 특강 13차 추가 모집 [YELLOW BELT/통합전공탐색 교과목]",
+   "posted": "2026-11-10",
+   "url": "https://www.jbnu.ac.kr/web/Board/219625/detailView.do?pageIndex=1&menu=2377",
+   "summary": ">\n 신입생-현직자 진로멘토링 특강 추가 참여자를 모집합니다! \n 구글 신청이니 QR확인 후 신청 바랍니다! \n https://forms.gle/BXLwPAbNRcmViiG76",
+   "points": null,
+   "belts": [
+    "YELLOW"
+   ],
+   "deadline": null,
+   "required": false,
+   "firstSeen": "2026-11-11T15:49+09:00"
+  },
+  {
+   "id": "main-219622",
+   "source": "교내공지",
+   "title": "[최종/ 법정의무교육] 2026 하반기 장애 인식 개선 전문강사 초빙교육 운영 안내",
+   "posted": "2026-11-10",
+   "url": "https://www.jbnu.ac.kr/web/Board/219622/detailView.do?pageIndex=1&menu=2377",
+   "summary": ">\n ﻿ \n < 2026 장애 이해 전문강사 초빙 교육 ( 법정의무교육 ) > \n 1. 교육일정 : 2026. 11. 10.( 화 ) 14:00~15:00 / 진수당 1 층 77 주년기념홀 \n 2. 참여대상 : 교원 , 직원 , 학생 ( 교내 구성원 ) 100명 / 잔여좌석에 대하여 현장 참여 가능 \n 3. 참여자 혜택 \n 1) 참여자 간식제공 ( 선착순/ 호텔아프리카 에그타르트) \n 2) 학생 - 큰사람포인트 ( 특강 -10) 지급 , 직원 - 상시학습시간 (1 시간 ) 인정 , \n 3) 2026 법정의무교육 ( 장애인식개선교육 ) 이수 인정",
+   "points": null,
+   "belts": [],
+   "deadline": null,
+   "required": false,
+   "firstSeen": "2026-11-11T15:49+09:00"
+  },
+  {
+   "id": "main-219598",
+   "source": "교내공지",
+   "title": "2026년 전북대학교 글로컬대학 온라인 비교과 교육콘텐츠 공유 및 수강 안내(큰사람포인트 지급/이수증 발급)",
+   "posted": "2026-11-09",
+   "url": "https://www.jbnu.ac.kr/web/Board/219598/detailView.do?pageIndex=1&menu=2377",
+   "summary": ">\n 다양한 온라인 비교과 교육콘텐츠를 교내 재학생과 교직원에게 무료로 제공하고자 합니다. \n 많은 관심 바랍니다. \n ※ 수강신청 경로 안내 \n 전북대 LMS 로그인→ 전제 강좌→ 교육프로그램→ 프로그램 신청→ 강좌명: 2026년 글로컬대학 교육콘텐츠 운영으로 선택 후 검색 \n → 수강 희망 콘텐츠 선택 후 수강 신청하고 수강 시작 \n ※ 수강 혜택 \n - 재학생: 큰사람포인트 지급 및 이수증 발급 \n - 교직원: 이수증 발급\n **큰사람포인트: '기타교육' 항목으로 지급되며 콘텐츠 1개당 5점 지급, 1인당 최대 50점(콘텐츠 10개)까지 지급 \n (큰사람포인트는 2027년 2월에 일괄지급해드릴 예정입니다.) \n ※ 기타 문의: 063-270-4287(전북대학교 미래교육부)",
+   "points": 5,
+   "belts": [],
+   "deadline": null,
+   "required": false,
+   "firstSeen": "2026-11-11T15:49+09:00"
+  },
+  {
+   "id": "main-219585",
+   "source": "교내공지",
+   "title": "[행복드림] '2027 연력 드로잉' 원데이 클래스 프로그램 안내",
+   "posted": "2026-11-09",
+   "url": "https://www.jbnu.ac.kr/web/Board/219585/detailView.do?pageIndex=1&menu=2377",
+   "summary": ">\n 연력드로잉 원데이클래스 \n 2시간 안에 드로잉체험과 나만의 2027년 달력을 만들어보는 체험 프로그램 \n ● 웰빙증진 프로그램은? \n - 월별 새로운 주제의 원데이 클래스를 통해 긍정심리학 기반의 '심리적 자원개발'에 중점을 둔 프로그램입니다.\n ● 신청안내 \n - 일 시 : 11월 13일(금) 오후 3시~5시(2H) \n - 신청기간 : ~11월 11일(수) 낮 12시까지 \n - 대 상 : 전북대학교 재학생 12명 (선착순 접수) \n - 장 소 : 대면실시(행복드림센터 교육실) \n - 신청방법 : 행복드림센터 홈페이지 신청(오른쪽 클릭)/ 전북대학교 행복드림센터 - 지원프로그램 \n - 혜 택 : 큰사람 포인트 선택항목 10점 \n - 문 의 : 063) 219-5301 / 5303 \n ● 유의사항 \n -",
+   "points": null,
+   "belts": [],
+   "deadline": "2026-11-11",
+   "required": false,
+   "firstSeen": "2026-11-11T15:49+09:00"
+  },
+  {
+   "id": "main-219541",
+   "source": "교내공지",
+   "title": "[YELLOW BELT 필수] 재학생-재학생 멘토링 DAY 참여자 모집(3~12차)",
+   "posted": "2026-11-09",
+   "url": "https://www.jbnu.ac.kr/web/Board/219541/detailView.do?pageIndex=1&menu=2377",
+   "summary": ">\n ※ 3 차~12차는 구글폼으로도 신청 가능합니다. \n 차수\n 신청 구글폼 \n 3차\n https://forms.gle/DxMHrPSGkVt6TtaL6 \n 4차\n https://forms.gle/ft3UBRHRycnBw6Mz8 \n 5차\n https://forms.gle/JuawS53rcz7QL4Vy6 \n 6차\n https://forms.gle/iG4G8gTUmBwckfH19 \n 7차\n https://forms.gle/CXhhV44p1irnYsPL7 \n 8차\n https://forms.gle/eW9FnLtnJD92Pe7C7 \n 9차\n https://forms.gle/pkAFeMp6Qicx2vtj9 \n 10차\n https://forms.gle/zKLH5cBvRAoAoSNT6 \n 11차\n https://form",
+   "points": null,
+   "belts": [
+    "YELLOW"
+   ],
+   "deadline": null,
+   "required": true,
+   "firstSeen": "2026-11-11T15:49+09:00"
+  },
+  {
+   "id": "main-219539",
+   "source": "교내공지",
+   "title": "[BLUE/RED/ORANGE BELT] 2026년 하반기 면접 집중교육 참여자 모집 안내(졸업생 참여 가능)",
+   "posted": "2026-11-09",
+   "url": "https://www.jbnu.ac.kr/web/Board/219539/detailView.do?pageIndex=1&menu=2377",
+   "summary": ">\n 2026년 하반기 면접 집중교육 일정 및 신청 안내 취업진로지원과 홈페이지 바로가기(클릭) \n ※ 취업진로지원과에서 운영하는 면접교육은 교육시간과 관계없이 1차수만 이수하시면 큰사람프로젝트 면접교육 이수됩니다.",
+   "points": null,
+   "belts": [
+    "ORANGE",
+    "BLUE",
+    "RED"
+   ],
+   "deadline": null,
+   "required": false,
+   "firstSeen": "2026-11-11T15:49+09:00"
+  },
+  {
+   "id": "main-219516",
+   "source": "교내공지",
+   "title": "[언어교육부] 11월 21일(토) 모의토익 실시 안내(내일 접수 마감)",
+   "posted": "2026-11-06",
+   "url": "https://www.jbnu.ac.kr/web/Board/219516/detailView.do?pageIndex=1&menu=2377",
+   "summary": ">\n 언어교육부에서 아래와 같이 모의토익을 실시하오니, 많은 관심 부탁드립니다. \n 1. 실시 일시: 11. 21.(토) 10:00 \n 2. 실시 장소: JBNU인터내셔널센터 5층 강의실(1층 출입문에 고사실 안내) \n 3. 응시료: 17,000원 \n 4. 접수 기간: 10. 19.(월) ~ 11. 7.(토) \n 5. 신청 방법 \n 가. 언어교육부 수강신청 사이트 로그인( https://jump.jbnu.ac.kr/felelgn )-언어교육부-수강신청-모의토익 접수 및 납부 후 \n 나. YBM사이트 접수: https://ipexam.toeic.co.kr/jbnu \n 6. 응시 혜택(학부생 해당) \n 가. 점수에 상관없이 큰사람포인트 20점 지급(1회) \n - 신청 방법: JUMP - 원스탑(대학) - 비교과",
+   "points": 20,
+   "belts": [],
+   "deadline": "2026-11-07",
+   "required": false,
+   "firstSeen": "2026-11-11T15:49+09:00"
+  },
+  {
+   "id": "main-219515",
+   "source": "교내공지",
+   "title": "[YELLOW BELT 필수선택] 진로설정캠프 (2차) 참여자 모집",
+   "posted": "2026-11-06",
+   "url": "https://www.jbnu.ac.kr/web/Board/219515/detailView.do?pageIndex=1&menu=2377",
+   "summary": ">\n 취업진로지원과 바로가기",
+   "points": null,
+   "belts": [
+    "YELLOW"
+   ],
+   "deadline": null,
+   "required": true,
+   "firstSeen": "2026-11-11T15:49+09:00"
+  },
+  {
+   "id": "main-219505",
+   "source": "교내공지",
+   "title": "[행복드림] 발표불안 감소 집단상담 프로그램 안내",
+   "posted": "2026-11-06",
+   "url": "https://www.jbnu.ac.kr/web/Board/219505/detailView.do?pageIndex=1&menu=2377",
+   "summary": ">\n ● 집단상담이란\n - 비슷한 관심을 가진 사람들이 소규모로 모여(10명내외) 1-2명의 전문상담사와 2시간정도의 모임을 갖는 상담과정입니다.\n - 참여자들은 집단상담의 주제에 따라 다양한 개인적 문제와 인간관계에 대해 함께 이야기하고 함께 해결책을 찾아갑니다. \n - 이 과정에서 우리는 자신의 문제를 다른 시각으로 볼 수 있게 되고 새로운 행동과 사고방식을 배우게 됩니다. \n ● 신청안내\n - 일 시 : 11월 9일~ 11월 23일, 매주 월,목 17:00~19:00 \n - 신청기간 : ~11월 8일(일)까지\n - 대 상 : 전북대학교 재학생 10명 (선착순 모집)\n - 장 소 : 대면실시(행복드림센터 교육실)\n - 신청방법 : 행복드림센터 홈페이지 지원프로그램 신청​ \n - 혜 택 : 큰사람 포인트 ",
+   "points": 20,
+   "belts": [],
+   "deadline": "2026-11-08",
+   "required": false,
+   "firstSeen": "2026-11-11T15:49+09:00"
+  },
+  {
+   "id": "main-219469",
+   "source": "교내공지",
+   "title": "[YELLOW BELT 필수지정] 재학생-재학생 멘토링 DAY 참여자 모집(통합전공탐색 1시간 인정)",
+   "posted": "2026-11-05",
+   "url": "https://www.jbnu.ac.kr/web/Board/219469/detailView.do?pageIndex=1&menu=2377",
+   "summary": ">\n ※ 3 차~12차는 구글폼으로도 신청 가능합니다. \n 차수\n 신청 구글폼 \n 3차\n https://forms.gle/DxMHrPSGkVt6TtaL6 \n 4차\n https://forms.gle/ft3UBRHRycnBw6Mz8 \n 5차\n https://forms.gle/JuawS53rcz7QL4Vy6 \n 6차\n https://forms.gle/iG4G8gTUmBwckfH19 \n 7차\n https://forms.gle/CXhhV44p1irnYsPL7 \n 8차\n https://forms.gle/eW9FnLtnJD92Pe7C7 \n 9차\n https://forms.gle/pkAFeMp6Qicx2vtj9 \n 10차\n https://forms.gle/zKLH5cBvRAoAoSNT6 \n 11차\n https://form",
+   "points": null,
+   "belts": [
+    "YELLOW"
+   ],
+   "deadline": null,
+   "required": true,
+   "firstSeen": "2026-11-11T15:49+09:00"
+  },
+  {
+   "id": "main-219460",
+   "source": "교내공지",
+   "title": "(법정의무교육) 2026 하반기 장애 인식 개선 전문강사 초빙교육 신청 안내",
+   "posted": "2026-11-05",
+   "url": "https://www.jbnu.ac.kr/web/Board/219460/detailView.do?pageIndex=1&menu=2377",
+   "summary": ">\n ﻿ \n < 2026 장애 이해 전문강사 초빙 교육 ( 법정의무교육 ) > \n 1. 교육일정 : 2026. 11. 10.( 화 ) 14:00~15:00 / 진수당 1 층 77 주년기념홀 \n 2. 참여대상 : 교원 , 직원 , 학생 ( 교내 구성원 ) 100명 / 선착순 \n 3. 참여자 혜택 \n 1) 참여자 간식제공 ( 선착순/ 호텔아프리카 에그타르트) \n 2) 학생 - 큰사람포인트 ( 특강 -10) 지급 , 직원 - 상시학습시간 (1 시간 ) 인정 , \n 3) 2026 법정의무교육 ( 장애인식개선교육 ) 이수 인정 \n 4. 신청링크 : https://forms.gle/MBzDREGXL9G7RVaw7 \n 5. 관련문의: 063-270-3004 / 전북대학교 학생취업진로처(장애학생지원센터)",
+   "points": null,
+   "belts": [],
+   "deadline": null,
+   "required": false,
+   "firstSeen": "2026-11-11T15:49+09:00"
+  },
+  {
+   "id": "main-219454",
+   "source": "교내공지",
+   "title": "[언어교육부] 11월 21일(토) 모의토익 실시 안내",
+   "posted": "2026-11-05",
+   "url": "https://www.jbnu.ac.kr/web/Board/219454/detailView.do?pageIndex=1&menu=2377",
+   "summary": ">\n 언어교육부에서 아래와 같이 모의토익을 실시하오니, 많은 관심 부탁드립니다. \n 1. 실시 일시: 11. 21.(토) 10:00 \n 2. 실시 장소: JBNU인터내셔널센터 5층 강의실(1층 출입문에 고사실 안내) \n 3. 응시료: 17,000원 \n 4. 접수 기간: 10. 19.(월) ~ 11. 7.(토) \n 5. 신청 방법 \n 가. 언어교육부 수강신청 사이트 로그인( https://jump.jbnu.ac.kr/felelgn )-언어교육부-수강신청-모의토익 접수 및 납부 후 \n 나. YBM사이트 접수: https://ipexam.toeic.co.kr/jbnu \n 6. 응시 혜택(학부생 해당) \n 가. 점수에 상관없이 큰사람포인트 20점 지급(1회) \n - 신청 방법: JUMP - 원스탑(대학) - 비교과",
+   "points": 20,
+   "belts": [],
+   "deadline": "2026-11-07",
+   "required": false,
+   "firstSeen": "2026-11-11T15:49+09:00"
+  },
+  {
+   "id": "main-219429",
+   "source": "교내공지",
+   "title": "[YELLOW BELT 필수지정] 재학생-재학생 멘토링 DAY 참여자 모집(통합전공탐색 1시간 인정)",
+   "posted": "2026-11-04",
+   "url": "https://www.jbnu.ac.kr/web/Board/219429/detailView.do?pageIndex=1&menu=2377",
+   "summary": ">\n ※ 3 차~12차는 구글폼으로도 신청 가능합니다. \n 차수\n 신청 구글폼 \n 3차\n https://forms.gle/DxMHrPSGkVt6TtaL6 \n 4차\n https://forms.gle/ft3UBRHRycnBw6Mz8 \n 5차\n https://forms.gle/JuawS53rcz7QL4Vy6 \n 6차\n https://forms.gle/iG4G8gTUmBwckfH19 \n 7차\n https://forms.gle/CXhhV44p1irnYsPL7 \n 8차\n https://forms.gle/eW9FnLtnJD92Pe7C7 \n 9차\n https://forms.gle/pkAFeMp6Qicx2vtj9 \n 10차\n https://forms.gle/zKLH5cBvRAoAoSNT6 \n 11차\n https://form",
+   "points": null,
+   "belts": [
+    "YELLOW"
+   ],
+   "deadline": null,
+   "required": true,
+   "firstSeen": "2026-11-11T15:49+09:00"
+  },
+  {
+   "id": "main-219417",
+   "source": "교내공지",
+   "title": "[행복드림] 발표불안 집단상담 프로그램 안내",
+   "posted": "2026-11-04",
+   "url": "https://www.jbnu.ac.kr/web/Board/219417/detailView.do?pageIndex=1&menu=2377",
+   "summary": ">\n ● 집단상담이란\n - 비슷한 관심을 가진 사람들이 소규모로 모여(10명내외) 1-2명의 전문상담사와 2시간정도의 모임을 갖는 상담과정입니다.\n - 참여자들은 집단상담의 주제에 따라 다양한 개인적 문제와 인간관계에 대해 함께 이야기하고 함께 해결책을 찾아갑니다. \n - 이 과정에서 우리는 자신의 문제를 다른 시각으로 볼 수 있게 되고 새로운 행동과 사고방식을 배우게 됩니다. \n ● 신청안내\n - 일 시 : 11월 9일~ 11월 23일, 매주 월,목 17:00~19:00 \n - 신청기간 : ~11월 6일(금) 낮 12시까지\n - 대 상 : 전북대학교 재학생 10명 (선착순 모집)\n - 장 소 : 대면실시(행복드림센터 교육실)\n - 신청방법 : 행복드림센터 홈페이지 지원프로그램 신청​ \n - 혜 택 : 큰사",
+   "points": 20,
+   "belts": [],
+   "deadline": "2026-11-06",
+   "required": false,
+   "firstSeen": "2026-11-11T15:49+09:00"
+  },
+  {
+   "id": "main-219416",
+   "source": "교내공지",
+   "title": "(글로컬/중앙도서관) 논문작성 집중 특강 'AI 시대의 연구 방법과 논문작성 전략' 안내(큰사람포인트/직원 상시학습 인정)",
+   "posted": "2026-11-04",
+   "url": "https://www.jbnu.ac.kr/web/Board/219416/detailView.do?pageIndex=1&menu=2377",
+   "summary": ">\n ﻿ \n (글로컬) 논문작성 집중 특강 'AI 시대의 연구 방법과 논문작성 전략' 안내 ○ 일 시: 26.11.17.(화) ~ 11.25.(수) 14:00-16:00 ○ 대 상: 교내 구성원, 지역 연구자 회차별 150명 ○ 내 용: 과제·논문 작성을 위한 기초 역량 함양부터 영어논문 작성 및 해외 학술지 투고 전략 까지 연계하여 체계적인 연구 설계와 실질적인 논문 작성 역량 강화를 위한 특강 ○ 신청방법: 교육별 교육 참여 신청(도서관 어플 > 프로그램 > 신청하기) \n ○ 상세내용: \n ① 1일차(11.17.(화) 14:00-16:00): 논문 작성법 이해와 전략 \n - 논문 작성법 이해와 전략 \n - 논문의 장별 특성 이해 \n - 통계분석 방법 기초: 논문 통계표 이해하기 \n ② 2일차(11.18.",
+   "points": 10,
+   "belts": [],
+   "deadline": null,
+   "required": false,
+   "firstSeen": "2026-11-11T15:49+09:00"
+  },
+  {
+   "id": "main-219406",
+   "source": "교내공지",
+   "title": "[전북국제개발협력센터] 국제개발협력 전문가 특강 참여자 모집 - 국제개발협력과 거버넌스·평화 (큰사람 포인트 10점 지급!)",
+   "posted": "2026-11-03",
+   "url": "https://www.jbnu.ac.kr/web/Board/219406/detailView.do?pageIndex=1&menu=2377",
+   "summary": ">\n 안녕하세요. 전북국제개발협력센터 입니다 :)\n 11월 10일 (화) 국제개발협력 전문가 특강 : 국제개발협력과 거버넌스·평화 참여자를 모집합니다 ^^\n 🔹특 강 명 : 국제개발협력과 거버넌스·평화\n 🔹교육대상 : 국제개발협력 또는 거버넌스·평화에 관심있는 전북대 재학생 (선착순 20명)\n 🔹강 사 : 한승헌 소장 (現 한국행정연구원 연구위원, 前 글로벌개발협력센터 소장)\n 🔹강연주제 :\n 1) 국제개발협력 거버넌스·평화 동향\n 2) 협력적 거버넌스 사례\n 🔹일 시 : 2026. 11. 10. (화) 14:00 - 17:00\n 🔹장 소 : 전북대학교 JBNU 인터내셔널 센터 201호\n 🔹ZOOM : 992 605 4346 (PW: 0000)\n 🔹신청기간 : 2026. 11. 03.(화) ~ 2026. 1",
+   "points": 10,
+   "belts": [],
+   "deadline": "2026-11-10",
+   "required": false,
+   "firstSeen": "2026-11-11T15:49+09:00"
+  },
+  {
+   "id": "main-219393",
+   "source": "교내공지",
+   "title": "[대한항공 항공정비사] 교내 채용설명회 개최 안내",
+   "posted": "2026-11-03",
+   "url": "https://www.jbnu.ac.kr/web/Board/219393/detailView.do?pageIndex=1&menu=2377",
+   "summary": ">\n ㅇ 대상 : 이공계 전공자이면서 항공정비 분야 취업 희망자 \n ㅇ 소요 시간 : 약 60분 \n ㅇ 주요 내용 \n - 대한항공 항공정비사 기술훈련생 제도 소개 \n - 6개월 교육과정 및 인턴정비사 채용 연계 프로세스 설명 \n - 지원 자격 및 모집 전형 안내 \n ※ 큰사람 포인트 5p 지급 \n ※ 공결요청서 지급",
+   "points": 5,
+   "belts": [],
+   "deadline": null,
+   "required": false,
+   "firstSeen": "2026-11-11T15:49+09:00"
+  },
+  {
+   "id": "main-219392",
+   "source": "교내공지",
+   "title": "[조선내화] 교내 채용설명회 개최 안내",
+   "posted": "2026-11-03",
+   "url": "https://www.jbnu.ac.kr/web/Board/219392/detailView.do?pageIndex=1&menu=2377",
+   "summary": ">\n - 현직자는 \"기술솔루션\" 직무에 대해 소개할 예정이며, 기타 직무는 인사담당자와 함께 질의응답을 받을 예정입니다. \n - 채용 홈페이지 : https://cr.careerlink.kr/ \n ※ 큰사람 포인트 5p 지급 \n ※ 공결요청서 지급",
+   "points": 5,
+   "belts": [],
+   "deadline": null,
+   "required": false,
+   "firstSeen": "2026-11-11T15:49+09:00"
+  },
+  {
+   "id": "main-219389",
+   "source": "교내공지",
+   "title": "[중앙도서관] 「작가와 함께하는 도슨트」 프로그램 안내(2회차)",
+   "posted": "2026-11-03",
+   "url": "https://www.jbnu.ac.kr/web/Board/219389/detailView.do?pageIndex=1&menu=2377",
+   "summary": ">\n [미술로 읽어본다] 「작가와 함께하는 도슨트」 프로그램 안내(2회차) \n 작품 너머에 담긴 이야기가 궁금하신가요? 작가가 직접 들려주는 이야기와 창작의 순간을 만나보세요.\n ○ 일 시: 11. 18.(수) 15:00 \n ○ 장 소: 중앙도서관 1층 중도라운지 전시갤러리\n ○ 대 상: 대학 구성원 및 지역주민\n ※ 현재 진행 중인 「미술로 읽어본다」 전시 참여작가들이 직접 작품을 소개합니다.\n ○ 참여혜택: 큰사람포인트 10P 제공, 마일리지 장학금 10점 적립 \n ○ 신청방법: 홍보물 속 QR코드 스캔 → 도서관 모바일 앱 접속 → 프로그램 → 신청하기 클릭",
+   "points": 10,
+   "belts": [],
+   "deadline": null,
+   "required": false,
+   "firstSeen": "2026-11-11T15:49+09:00"
+  },
+  {
+   "id": "main-219385",
+   "source": "교내공지",
+   "title": "**10명 추가모집**[레드/블루벨트 필수] 2026학년도 2학기 PSAT(공직적격성평가) 오프라인 모의고사",
+   "posted": "2026-11-03",
+   "url": "https://www.jbnu.ac.kr/web/Board/219385/detailView.do?pageIndex=1&menu=2377",
+   "summary": ">",
+   "points": null,
+   "belts": [
+    "BLUE",
+    "RED"
+   ],
+   "deadline": null,
+   "required": true,
+   "firstSeen": "2026-11-11T15:49+09:00"
+  },
+  {
+   "id": "main-219382",
+   "source": "교내공지",
+   "title": "커리어개발워크숍(12-16차) 참여자 추가 모집 [YELLOW BELT/통합전공탐색 교과목]",
+   "posted": "2026-11-03",
+   "url": "https://www.jbnu.ac.kr/web/Board/219382/detailView.do?pageIndex=1&menu=2377",
+   "summary": ">\n 커리어개발워크숍 12~16차 참여자를 추가 모집합니다. \n 2026학년도 2학기 커리어개발워크숍은 16차가 마지막 차수입니다! \n https://career.jbnu.ac.kr/career/index.do",
+   "points": null,
+   "belts": [
+    "YELLOW"
+   ],
+   "deadline": null,
+   "required": false,
+   "firstSeen": "2026-11-11T15:49+09:00"
+  },
+  {
+   "id": "main-219373",
+   "source": "교내공지",
+   "title": "[산학협력단] 「손자병법 속 승리전략」 인문학 특강 재안내(11.10.(화) 16:00-17:00) // 큰사람포인트 10점",
+   "posted": "2026-11-03",
+   "url": "https://www.jbnu.ac.kr/web/Board/219373/detailView.do?pageIndex=1&menu=2377",
+   "summary": ">\n 「손자병법 속 승리전략」 인문학 특강 재안내드립니다.\n 1. 일시: 2026. 11. 10.(화) 16:00-17:00 \n 2. 장소: JBNU 인터내셔널센터 7층 동행홀\n 3. 강사: 진성수 철학과 교수님 / 출판문화원장님\n 4. 주제: 손자병법 속 승리전략\n 5. 신청: https://naver.me/xYNM4CDe \n ** tvN 벌거벗은 세계사 215회 출연\n ** 간식제공(선착순 100명)\n ** 큰사람포인트 10점 부여 \n 많은 참석 부탁드립니다!!",
+   "points": 10,
+   "belts": [],
+   "deadline": null,
+   "required": false,
+   "firstSeen": "2026-11-11T15:49+09:00"
+  },
+  {
+   "id": "main-219344",
+   "source": "교내공지",
+   "title": "[행복드림] 발표불안 집단상담 프로그램 안내",
+   "posted": "2026-11-02",
+   "url": "https://www.jbnu.ac.kr/web/Board/219344/detailView.do?pageIndex=1&menu=2377",
+   "summary": ">\n ● 집단상담이란\n - 비슷한 관심을 가진 사람들이 소규모로 모여(10명내외) 1-2명의 전문상담사와 2시간정도의 모임을 갖는 상담과정입니다.\n - 참여자들은 집단상담의 주제에 따라 다양한 개인적 문제와 인간관계에 대해 함께 이야기하고 함께 해결책을 찾아갑니다. \n - 이 과정에서 우리는 자신의 문제를 다른 시각으로 볼 수 있게 되고 새로운 행동과 사고방식을 배우게 됩니다. \n ● 신청안내\n - 일 시 : 11월 9일~ 11월 23일, 매주 월,목 17:00~19:00 \n - 신청기간 : ~11월 6일(금) 낮 12시까지\n - 대 상 : 전북대학교 재학생 10명 (선착순 모집)\n - 장 소 : 대면실시(행복드림센터 교육실)\n - 신청방법 : 행복드림센터 홈페이지 지원프로그램 신청​ \n - 혜 택 : 큰사",
+   "points": 20,
+   "belts": [],
+   "deadline": "2026-11-06",
+   "required": false,
+   "firstSeen": "2026-11-11T15:49+09:00"
+  },
+  {
+   "id": "main-219341",
+   "source": "교내공지",
+   "title": "[RED/ORANGE BELT] 큰사람프로젝트 'AI 면접' 항목 이수 방법 안내",
+   "posted": "2026-11-02",
+   "url": "https://www.jbnu.ac.kr/web/Board/219341/detailView.do?pageIndex=1&menu=2377",
+   "summary": ">\n ※ 이용횟수와 관계없이 월 최대 10점(1회)만 인정됩니다.",
+   "points": null,
+   "belts": [
+    "ORANGE",
+    "RED"
+   ],
+   "deadline": null,
+   "required": false,
+   "firstSeen": "2026-11-11T15:49+09:00"
+  },
+  {
+   "id": "main-219326",
+   "source": "교내공지",
+   "title": "2026년 국가근로장학금 동계방학 집중근로 프로그램 희망근로지 신청 안내(10. 30.(금) 09:00 ~ 11. 12.(목) 18:00)",
+   "posted": "2026-11-02",
+   "url": "https://www.jbnu.ac.kr/web/Board/219326/detailView.do?pageIndex=1&menu=2377",
+   "summary": ">\n ※ ​ 공고문 및 [붙임]의 매뉴얼을 반드시 숙지하시기 바라며 , 미숙지로 인한 책임은 학생 본인에게 있음 . \n 2026년 국가근로장학금 동계 방학 집중근로 프로그램 희망근로지 신​청 안내 \n 1. 신청기간: 2026. 10. 30.(금) 09:00 ~ 11. 12.(목) 18:00까지 \n 2. 신청자격 : 2026 학년도 2 학기 국가근로장학금 일반 유형을 신청한 재학생 \n 3. 신청방법: 한국장학재단 홈페이지 - 장학금 - 국가근로장학금 - 근로장학관리 - 희망근로지 신청 ※ 상세 매뉴얼은 [붙임] 참고 \n 4. 선발기준: 한국장학재단 사전매칭* 학생 중 예산 범위 내에서 소득분위 등을 기준으로 선발 \n * 사전매칭: 한국장학재단이 소득분위 등을 고려하여 근로장학생 수요 신청을 한 근로기관과 희망",
+   "points": null,
+   "belts": [],
+   "deadline": "2026-11-12",
+   "required": false,
+   "firstSeen": "2026-11-11T15:49+09:00"
+  },
+  {
+   "id": "main-219315",
+   "source": "교내공지",
+   "title": "[YELLOW BELT 필수선택] 2026학년도 2학기 진로설정캠프(2차) 참여자 모집",
+   "posted": "2026-11-02",
+   "url": "https://www.jbnu.ac.kr/web/Board/219315/detailView.do?pageIndex=1&menu=2377",
+   "summary": ">\n 취업진로지원과 바로가기",
+   "points": null,
+   "belts": [
+    "YELLOW"
+   ],
+   "deadline": null,
+   "required": true,
+   "firstSeen": "2026-11-11T15:49+09:00"
+  },
+  {
+   "id": "main-219310",
+   "source": "교내공지",
+   "title": "신입생-현직자 멘토링 특강 12~13차 참여자 모집 [YELLOW BELT/통합전공탐색 교과목 인정]",
+   "posted": "2026-11-02",
+   "url": "https://www.jbnu.ac.kr/web/Board/219310/detailView.do?pageIndex=1&menu=2377",
+   "summary": ">\n 12~13차 신입생-현직자 멘토링 특강 참여자를 모집합니다. \n https://m.site.naver.com/2k1lU",
+   "points": null,
+   "belts": [
+    "YELLOW"
+   ],
+   "deadline": null,
+   "required": false,
+   "firstSeen": "2026-11-11T15:49+09:00"
+  },
+  {
+   "id": "main-219309",
+   "source": "교내공지",
+   "title": "제27기 학생홍보대사 모집 안내",
+   "posted": "2026-11-02",
+   "url": "https://www.jbnu.ac.kr/web/Board/219309/detailView.do?pageIndex=1&menu=2377",
+   "summary": ">\n [제27기 학생홍보대사 모집 안내] \n ○ 모집 인원 : \n 총 15명 내외 \n ○ 접수 기간 : 2026. 11. 16.(월) ~ 2026. 12. 2.(수) 14:00까지 \n ○ 서류심사 결과 발표 : 2026. 12. 7.(월) 18:00 \n ○ 면접 일정 : 2026. 12. 10.(목) ~ \n 2026. 12. 11.(금) 중 1일 \n ※면접 대상자는 양일 중 지정된 1일에만 면접에 응시하며, 세부 일정 및 장소는 추후 안내 \n ○ 면접 결과 발표 : 2026. 12. 21.(월) 14:00 \n ○ 교육 일정 : 2027. 1. 11.(월) ~ 2027. 1. 29.(금) \n ○ 최종 합격자 발표 : 2027. 2. 4.(목) 18:00 \n *자세한 사항은 첨부된 모집 공고 및 지원서 양식을 ",
+   "points": null,
+   "belts": [],
+   "deadline": "2026-12-02",
+   "required": false,
+   "firstSeen": "2026-11-11T15:49+09:00"
+  },
+  {
+   "id": "main-219305",
+   "source": "교내공지",
+   "title": "[BLUE/RED/ORANGE BELT] 2026년 하반기 면접 집중교육 참여자 모집 안내(졸업생 참여 가능)",
+   "posted": "2026-11-02",
+   "url": "https://www.jbnu.ac.kr/web/Board/219305/detailView.do?pageIndex=1&menu=2377",
+   "summary": ">\n 2026년 하반기 면접 집중교육 일정 및 신청 안내 취업진로지원과 홈페이지 바로가기(클릭)",
+   "points": null,
+   "belts": [
+    "ORANGE",
+    "BLUE",
+    "RED"
+   ],
+   "deadline": null,
+   "required": false,
+   "firstSeen": "2026-11-11T15:49+09:00"
+  },
+  {
+   "id": "main-219304",
+   "source": "교내공지",
+   "title": "[BLUE BELT] 2026년 하반기 입사지원서 작성법 집중교육 참여자 모집 안내(졸업생 참여 가능)",
+   "posted": "2026-11-02",
+   "url": "https://www.jbnu.ac.kr/web/Board/219304/detailView.do?pageIndex=1&menu=2377",
+   "summary": ">\n 2026년 하반기 입사지원서 작성법 집중교육 일정 및 신청 안내 \n <수료 기준> ① 기초과정: 입사지원서 작성법 집중교육(3시간) 100% 참여 + 교육 후 입사지원서 클리닉(온라인 시스템) 참여 + 만족도 조사 참여 ※ 입사지원서 클리닉은 작성한 입사지원서를 온라인으로 제출하여 48시간 이내로 피드백을 받는 입사지원서 코칭 시스템입니다. ② 심화과정: 입사지원서 작성법 집중교육(3시간) 및 1:1 컨설팅(약 20분) 참여 + 만족도 조사 참여 ※ 1:1 컨설팅에는 작성한 자기소개서를 지참하여 참여해야 합니다. \n <참고> \n① 자기소개서(입사지원서) 양식은 본인이 희망하는 기업의 양식을 활용하거나 첨부되어 있는 입사지원서 양식을 활용하여 작성하시기 바랍니다.\n ② 공결요청서는 프로그램 신청 시 신청",
+   "points": null,
+   "belts": [
+    "BLUE"
+   ],
+   "deadline": null,
+   "required": false,
+   "firstSeen": "2026-11-11T15:49+09:00"
+  },
+  {
+   "id": "main-219193",
+   "source": "교내공지",
+   "title": "[YELLOW BELT 필수지정] 재학생-재학생 멘토링 DAY 참여자 모집(통합전공탐색 1시간 인정)",
+   "posted": "2026-10-30",
+   "url": "https://www.jbnu.ac.kr/web/Board/219193/detailView.do?pageIndex=1&menu=2377",
+   "summary": ">\n ※ 3 차~12차는 구글폼으로도 신청 가능합니다. \n 차수\n 신청 구글폼 \n 3차\n https://forms.gle/DxMHrPSGkVt6TtaL6 \n 4차\n https://forms.gle/ft3UBRHRycnBw6Mz8 \n 5차\n https://forms.gle/JuawS53rcz7QL4Vy6 \n 6차\n https://forms.gle/iG4G8gTUmBwckfH19 \n 7차\n https://forms.gle/CXhhV44p1irnYsPL7 \n 8차\n https://forms.gle/eW9FnLtnJD92Pe7C7 \n 9차\n https://forms.gle/pkAFeMp6Qicx2vtj9 \n 10차\n https://forms.gle/zKLH5cBvRAoAoSNT6 \n 11차\n https://form",
+   "points": null,
+   "belts": [
+    "YELLOW"
+   ],
+   "deadline": null,
+   "required": true,
+   "firstSeen": "2026-11-11T15:49+09:00"
+  },
+  {
+   "id": "main-219128",
+   "source": "교내공지",
+   "title": "[BLUE BELT필수] 2026년 하반기 우수기업 탐방(5차) '한국중부발전' 참여자 모집 안내",
+   "posted": "2026-10-29",
+   "url": "https://www.jbnu.ac.kr/web/Board/219128/detailView.do?pageIndex=1&menu=2377",
+   "summary": ">\n [BLUE BELT필수] 2026년 하반기 우수기업 탐방 참여자를 모집합니다. 관심있는 학생들의 참여 바랍니다.",
+   "points": null,
+   "belts": [
+    "BLUE"
+   ],
+   "deadline": null,
+   "required": true,
+   "firstSeen": "2026-11-11T15:49+09:00"
+  },
+  {
+   "id": "main-219100",
+   "source": "교내공지",
+   "title": "[레드/블루벨트 필수선택] 2026학년도 2학기 NCS 및 기업 직무적성검사 집중교육 참여자 모집 [1차: NCS 기초반/ 2차: 대기업반]",
+   "posted": "2026-10-29",
+   "url": "https://www.jbnu.ac.kr/web/Board/219100/detailView.do?pageIndex=1&menu=2377",
+   "summary": ">",
+   "points": null,
+   "belts": [
+    "BLUE",
+    "RED"
+   ],
+   "deadline": null,
+   "required": true,
+   "firstSeen": "2026-11-11T15:49+09:00"
+  },
+  {
+   "id": "main-219099",
+   "source": "교내공지",
+   "title": "[레드/블루벨트 필수선택,필수] 2026학년도 2학기 PSAT(공직적격성평가) 집중교육 및 모의고사 참여자 모집",
+   "posted": "2026-10-29",
+   "url": "https://www.jbnu.ac.kr/web/Board/219099/detailView.do?pageIndex=1&menu=2377",
+   "summary": ">",
+   "points": null,
+   "belts": [
+    "BLUE",
+    "RED"
+   ],
+   "deadline": null,
+   "required": true,
+   "firstSeen": "2026-11-11T15:49+09:00"
+  },
+  {
+   "id": "main-219026",
+   "source": "교내공지",
+   "title": "[YELLOW BELT 필수선택] 2026 동계 '기업의 달인되기' 참여팀 모집 안내 (11.2.~13. 모집)",
+   "posted": "2026-10-28",
+   "url": "https://www.jbnu.ac.kr/web/Board/219026/detailView.do?pageIndex=1&menu=2377",
+   "summary": ">\n 2026 동계 '기업의 달인되기' 참여팀을 모집합니다. 관심있는 학생들의 많은 참여 바랍니다.",
+   "points": null,
+   "belts": [
+    "YELLOW"
+   ],
+   "deadline": null,
+   "required": true,
+   "firstSeen": "2026-11-11T15:49+09:00"
+  },
+  {
+   "id": "main-218991",
+   "source": "교내공지",
+   "title": "[YELLOW BELT/통합전공탐색 교과목] 커리어개발워크숍(10-11) 참여자 추가 모집",
+   "posted": "2026-10-27",
+   "url": "https://www.jbnu.ac.kr/web/Board/218991/detailView.do?pageIndex=1&menu=2377",
+   "summary": ">\n 커리어개발 워크숍 참여자를 추가로 모집합니다. \n https://career.jbnu.ac.kr/career/index.do",
+   "points": null,
+   "belts": [
+    "YELLOW"
+   ],
+   "deadline": null,
+   "required": false,
+   "firstSeen": "2026-11-11T15:49+09:00"
+  },
+  {
+   "id": "main-218860",
+   "source": "교내공지",
+   "title": "[BLUE BELT] 2026년 하반기 입사지원서 작성법 집중교육 참여자 모집 안내(졸업생 참여 가능)",
+   "posted": "2026-10-26",
+   "url": "https://www.jbnu.ac.kr/web/Board/218860/detailView.do?pageIndex=1&menu=2377",
+   "summary": ">\n 2026년 하반기 입사지원서 작성법 집중교육 일정 및 신청 안내 \n <수료 기준> ① 기초과정: 입사지원서 작성법 집중교육(3시간) 100% 참여 + 교육 후 입사지원서 클리닉(온라인 시스템) 참여 + 만족도 조사 참여 ※ 입사지원서 클리닉은 작성한 입사지원서를 온라인으로 제출하여 48시간 이내로 피드백을 받는 입사지원서 코칭 시스템입니다. ② 심화과정: 입사지원서 작성법 집중교육(3시간) 및 1:1 컨설팅(약 20분) 참여 + 만족도 조사 참여 ※ 1:1 컨설팅에는 작성한 자기소개서를 지참하여 참여해야 합니다. \n <참고> \n① 자기소개서(입사지원서) 양식은 본인이 희망하는 기업의 양식을 활용하거나 첨부되어 있는 입사지원서 양식을 활용하여 작성하시기 바랍니다.\n ② 공결요청서는 프로그램 신청 시 신청",
+   "points": null,
+   "belts": [
+    "BLUE"
+   ],
+   "deadline": null,
+   "required": false,
+   "firstSeen": "2026-11-11T15:49+09:00"
+  },
+  {
+   "id": "main-218859",
+   "source": "교내공지",
+   "title": "[BLUE/RED/ORANGE BELT] 2026년 하반기 면접 집중교육 참여자 모집 안내(졸업생 참여 가능)",
+   "posted": "2026-10-26",
+   "url": "https://www.jbnu.ac.kr/web/Board/218859/detailView.do?pageIndex=1&menu=2377",
+   "summary": ">\n 2026년 하반기 면접 집중교육 일정 및 신청 안내 취업진로지원과 홈페이지 바로가기(클릭) \n ※ 취업진로지원과에서 운영하는 면접교육은 교육시간과 관계없이 1차수만 이수하시면 큰사람프로젝트 면접교육 이수됩니다.",
+   "points": null,
+   "belts": [
+    "ORANGE",
+    "BLUE",
+    "RED"
+   ],
+   "deadline": null,
+   "required": false,
+   "firstSeen": "2026-11-11T15:49+09:00"
+  },
+  {
+   "id": "main-218660",
+   "source": "교내공지",
+   "title": "[레드/블루벨트 필수선택] 2026학년도 2학기 NCS 및 기업 직무적성검사 집중교육 참여자 모집 [1차: NCS 기초반/ 2차: 대기업반]",
+   "posted": "2026-10-21",
+   "url": "https://www.jbnu.ac.kr/web/Board/218660/detailView.do?pageIndex=1&menu=2377",
+   "summary": ">",
+   "points": null,
+   "belts": [
+    "BLUE",
+    "RED"
+   ],
+   "deadline": null,
+   "required": true,
+   "firstSeen": "2026-11-11T15:49+09:00"
+  },
+  {
+   "id": "main-218433",
+   "source": "교내공지",
+   "title": "[레드/블루벨트 필수선택,필수] 2026학년도 2학기 PSAT(공직적격성평가) 집중교육 및 모의고사 참여자 모집",
+   "posted": "2026-10-15",
+   "url": "https://www.jbnu.ac.kr/web/Board/218433/detailView.do?pageIndex=1&menu=2377",
+   "summary": ">",
+   "points": null,
+   "belts": [
+    "BLUE",
+    "RED"
+   ],
+   "deadline": null,
+   "required": true,
+   "firstSeen": "2026-11-11T15:49+09:00"
+  },
+  {
+   "id": "main-216881",
+   "source": "교내공지",
+   "title": "<2026학년도 2학기 큰사람프로젝트 글로컬 벨트 장학생 선발 안내>",
+   "posted": "2026-09-01",
+   "url": "https://www.jbnu.ac.kr/web/Board/216881/detailView.do?pageIndex=1&menu=2377",
+   "summary": ">\n - 2 학기 포인트 신청마감 : 12.18.( 금 ) 15:00 \n - 2 학기 장학생 선발일시 : 12.22.( 화 ) 10:00 \n * 2026 년 폭력예방교육 이수 (LMS 학습관리시스템 ) 1회 필수 \n * 직전학기 (2026.1 학기 ) 성적 (2.75 이상 ) 등 선발기준 꼭 확인하시기 바랍니다 .",
+   "points": null,
+   "belts": [],
+   "deadline": null,
+   "required": false,
+   "firstSeen": "2026-11-11T15:49+09:00"
+  },
+  {
+   "id": "main-215952",
+   "source": "교내공지",
+   "title": "[레드/블루벨트 필수선택] 2026학년도 하계 NCS 직업기초능력평가 집중교육 참여자 모집",
+   "posted": "2026-08-07",
+   "url": "https://www.jbnu.ac.kr/web/Board/215952/detailView.do?pageIndex=1&menu=2377",
+   "summary": ">\n .",
+   "points": null,
+   "belts": [
+    "BLUE",
+    "RED"
+   ],
+   "deadline": null,
+   "required": true,
+   "firstSeen": "2026-11-11T15:49+09:00"
+  },
+  {
+   "id": "main-215577",
+   "source": "교내공지",
+   "title": "[레드/블루벨트 필수선택] 2026학년도 하계 NCS 직업기초능력평가 집중교육 참여자 모집",
+   "posted": "2026-07-27",
+   "url": "https://www.jbnu.ac.kr/web/Board/215577/detailView.do?pageIndex=1&menu=2377",
+   "summary": ">\n [레드/블루벨트 필수선택] 2026학년도 하계 NCS 직업기초능력평가 집중교육 참여자 모집",
+   "points": null,
+   "belts": [
+    "BLUE",
+    "RED"
+   ],
+   "deadline": null,
+   "required": true,
+   "firstSeen": "2026-11-11T15:49+09:00"
+  }
+ ]
+}

@@ -1,0 +1,15 @@
+{
+  "provisional": true,
+  "note": "아직 학과 기준을 확인하기 전 임시값이에요. 오아시스 졸업자가진단 캡처를 받으면 정확한 기준으로 바꿀게요. 기준 숫자는 연필 버튼으로 직접 고칠 수도 있어요.",
+  "credits": [
+    { "id": "total", "label": "총 이수학점", "required": 130, "total": true },
+    { "id": "general", "label": "교양", "required": 30 },
+    { "id": "major", "label": "전공", "required": 63 },
+    { "id": "advanced", "label": "전공심화 (전공 중)", "required": 21 },
+    { "id": "free", "label": "일반선택", "required": 0 }
+  ],
+  "checks": [
+    { "id": "cert", "label": "학과 졸업자격인증 (졸업시험·논문·자격증 등)" },
+    { "id": "gpa", "label": "졸업 평점 기준 충족" }
+  ]
+}
