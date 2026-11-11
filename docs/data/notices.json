@@ -1,6 +1,21 @@
 {
- "updated": "2026-11-11T16:15+09:00",
+ "updated": "2026-11-12T02:03+09:00",
  "notices": [
+  {
+   "id": "main-219703",
+   "source": "교내공지",
+   "title": "[YELLOW BELT 필수선택] 진로설정캠프 (2차) 참여자 모집(~11.13.)",
+   "posted": "2026-11-11",
+   "url": "https://www.jbnu.ac.kr/web/Board/219703/detailView.do?pageIndex=1&menu=2377",
+   "summary": ">\n 취업진로지원과 바로가기",
+   "points": null,
+   "belts": [
+    "YELLOW"
+   ],
+   "deadline": null,
+   "required": true,
+   "firstSeen": "2026-11-12T02:03+09:00"
+  },
   {
    "id": "main-219692",
    "source": "교내공지",
@@ -58,6 +73,23 @@
    "firstSeen": "2026-11-11T15:49+09:00"
   },
   {
+   "id": "career-405853",
+   "source": "취업진로지원과",
+   "title": "[RED/BLUE필수]2026년 2차 직무 자격증 과정 추가모집(★11/12까지★)",
+   "posted": "2026-11-11",
+   "url": "https://career.jbnu.ac.kr/bbs/career/3682/405853/artclView.do?layout=unknown",
+   "loginRequired": true,
+   "summary": "",
+   "points": null,
+   "belts": [
+    "BLUE",
+    "RED"
+   ],
+   "deadline": "2026-11-13",
+   "required": true,
+   "firstSeen": "2026-11-12T02:03+09:00"
+  },
+  {
    "id": "career-405759",
    "source": "취업진로지원과",
    "title": "**오늘 마감** [레드/블루벨트 필수선택] 2026학년도 2학기 NCS 및 기업 직무적성",
@@ -70,7 +102,7 @@
     "BLUE",
     "RED"
    ],
-   "deadline": "2026-11-11",
+   "deadline": "2026-11-12",
    "required": true
   },
   {
@@ -99,7 +131,7 @@
    "summary": "",
    "points": null,
    "belts": [],
-   "deadline": "2026-11-15",
+   "deadline": "2026-11-16",
    "required": false
   },
   {
