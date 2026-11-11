@@ -176,6 +176,7 @@
       if (p.cum < p.cumNeed) todo.push({ tag: b.id, color: b.color, t: `누적 포인트 ${fmt(p.cumNeed - p.cum)}점 더 (기준 ${fmt(p.cumNeed)}점)`, how: "대학영역을 뺀 큰사람 포인트는 모두 누적돼요" });
       break; // 지금 단계 벨트만
     }
+    for (const a of S.grad.adjust || []) todo.push({ tag: "졸업", color: "#1f9d55", t: `학과 문의: ${a.major} ${a.credits}학점 인정 받기`, how: a.note || "졸업 시즌에 학과 사무실에 문의" });
     // 졸업 항목은 벨트 항목에 밀리지 않게 앞쪽(장학 조건 다음)에 넣음
     todo.splice(S.my.violence ? 0 : 1, 0, ...gradGaps().map((g) => ({ tag: "졸업", color: "#1f9d55", t: `${/본전공|전체/.test(g.major) ? "" : g.major.split(" ")[0] + " "}${g.label} ${g.left}학점 더`, how: `${g.major} · 이번 학기 수강 중인 학점까지 뺀 값` })));
     if (beltOk("RED") && !S.my.held.BLACK) {
@@ -508,6 +509,16 @@
     ["dragleave", "drop"].forEach((ev) => drop.addEventListener(ev, (e) => { e.preventDefault(); drop.classList.remove("over"); }));
     drop.addEventListener("drop", (e) => { if (e.dataTransfer.files.length) importFiles([...e.dataTransfer.files], box); });
   });
+  document.addEventListener("click", (e) => {
+    if (e.target.id === "adjAdd") {
+      const credits = Number($("#adjCredits").value);
+      if (!credits) { $("#adjCredits").focus(); return; }
+      (S.grad.adjust = S.grad.adjust || []).push({ major: $("#adjMajor").value, cat: $("#adjCat").value, credits, note: $("#adjNote").value.trim() });
+      save(); renderGrad(); renderHome();
+    }
+    const del = e.target.closest("[data-adj-del]");
+    if (del) { S.grad.adjust.splice(Number(del.dataset.adjDel), 1); save(); renderGrad(); renderHome(); }
+  });
   $("#clearImport").addEventListener("click", () => {
     if (!confirm("불러온 엑셀 값을 이 기기에서 지울까요?")) return;
     delete S.grad.imported; delete S.pointsLog; delete S.beltStatus; save(); document.querySelectorAll(".importStatus").forEach((x) => (x.innerHTML = "")); renderAll();
@@ -526,13 +537,20 @@
     return { req: num(reqOf(tot)), done: num(S.grad.done[tot.id]), taking: 0, imported: false };
   }
   // 수강 중인 학점까지 넣고도 남는 졸업 항목
+  // 인정 예정 학점 (예: 졸업 시즌에 학과 문의로 복수전공 학점 인정) — 학점을 옮기는 것이라 총 학점에는 더하지 않음
+  const MAJOR_SUM_IDS = ["mreq", "msel", "adv"];
+  function adjOf(m, id) {
+    const list = (S.grad.adjust || []).filter((a) => a.major === m.type);
+    const sum = (ids) => r1(list.filter((a) => ids.includes(a.cat)).reduce((x, a) => x + num(a.credits), 0));
+    return id === "msum" ? sum(MAJOR_SUM_IDS) : sum([id]);
+  }
   function gradGaps() {
     const imp = S.grad.imported, out = [];
     if (!imp || !imp.majors) return out;
     for (const m of imp.majors) {
       for (const [id, , label] of MAJOR_COLS) {
         if (id === "total" || id === "msum" || !m.req[id] || m.opt[id]) continue;
-        const left = r1(m.req[id] - num(m.done[id]) - num(m.taking[id]));
+        const left = r1(m.req[id] - num(m.done[id]) - num(m.taking[id]) - adjOf(m, id));
         if (left > 0) out.push({ major: `${m.type}${m.name ? " " + m.name : ""}`, label, left });
       }
     }
@@ -541,10 +559,11 @@
     if (left > 0) out.unshift({ major: "전체", label: "총 학점", left });
     return out;
   }
-  function stackBar(done, taking, req) {
+  function stackBar(done, taking, req, adj = 0) {
     const a = req ? Math.min(100, (done / req) * 100) : 100;
     const b = req ? Math.min(100 - a, (taking / req) * 100) : 0;
-    return `<div class="bar${a >= 100 ? " good" : ""}"><i style="width:${a}%"></i>${b > 0 ? `<i class="taking" style="width:${b}%"></i>` : ""}</div>`;
+    const c = req ? Math.min(100 - a - b, (adj / req) * 100) : 0;
+    return `<div class="bar${a >= 100 ? " good" : ""}"><i style="width:${a}%"></i>${b > 0 ? `<i class="taking" style="width:${b}%"></i>` : ""}${c > 0 ? `<i class="adj" style="width:${c}%"></i>` : ""}</div>`;
   }
   function renderImported(imp) {
     let html = "";
@@ -560,15 +579,29 @@
         const rows = MAJOR_COLS.filter(([id]) => id !== "total" && (m.req[id] || m.done[id] || m.taking[id]));
         html += `<div class="card"><h2>${esc(m.type)} · ${esc(m.name)} <span class="hint">${esc(m.year)} 교육과정${m.type.includes("본전공") ? "" : ` · 총 ${m.req.total || 0}학점`}</span></h2>
           ${rows.map(([id, , label]) => {
-            const d = num(m.done[id]), tk = num(m.taking[id]), r = num(m.req[id]);
-            const after = r1(r - d - tk);
-            let note = r === 0 ? "기준 없음" : d >= r ? "충족 ✓" : after <= 0 ? "이번 학기 끝나면 충족" : `${r1(r - d)}학점 남음${tk ? ` · 수강 후 ${after}학점` : ""}`;
+            const d = num(m.done[id]), tk = num(m.taking[id]), r = num(m.req[id]), aj = adjOf(m, id);
+            const after = r1(r - d - tk - aj);
+            let note = r === 0 ? "기준 없음" : d >= r ? "충족 ✓" : after <= 0 ? (aj ? "수강·인정 예정까지 넣으면 충족" : "이번 학기 끝나면 충족") : `${r1(r - d)}학점 남음${tk || aj ? ` · ${tk ? "수강" : ""}${tk && aj ? "·" : ""}${aj ? `인정 예정 ${aj}학점` : ""} 반영 후 ${after}학점` : ""}`;
             if (m.max[id] && d > m.max[id]) note += ` · 최대 ${m.max[id]}학점까지만 인정`;
             return `<div class="credit"><div class="head"><span class="name">${label}${m.opt[id] ? `<span class="opt">선택</span>` : ""}</span>
-              <span class="nums"><b>${d}</b>${tk ? ` + ${tk}` : ""} / ${r}${m.max[id] ? `~${m.max[id]}` : ""}학점</span></div>
-              ${stackBar(d, tk, r)}<div class="left">${note}${m.opt[id] ? " · 다전공(복수전공 등)을 하면 대신 인정되는 경우가 많아요. 학과에 확인하세요." : ""}</div></div>`;
+              <span class="nums"><b>${d}</b>${tk ? ` + ${tk}` : ""}${aj ? ` + <span title="인정 예정">${aj}</span>` : ""} / ${r}${m.max[id] ? `~${m.max[id]}` : ""}학점</span></div>
+              ${stackBar(d, tk, r, aj)}<div class="left">${note}${m.opt[id] ? " · 다전공(복수전공 등)을 하면 대신 인정되는 경우가 많아요. 학과에 확인하세요." : ""}</div></div>`;
           }).join("")}</div>`;
       }
+    }
+    if (imp.majors && imp.majors.length) {
+      const adj = S.grad.adjust || [];
+      const catOpts = [["mreq", "전공필수"], ["msel", "전공선택"], ["adv", "전공심화"], ["general", "교양"], ["free", "일반선택"]];
+      html += `<div class="card"><h2>인정 예정 학점</h2>
+        <p class="hint">이미 들었지만 나중에 다른 영역으로 인정받기로 한 과목을 적어 두세요. 학점을 옮기는 것이라 총 학점에는 더하지 않고, 해당 영역의 남은 학점에서만 빼요.</p>
+        ${adj.length ? adj.map((a, i) => `<div class="credit"><div class="head"><span class="name">${esc(a.major)} ${esc((catOpts.find((c) => c[0] === a.cat) || [, a.cat])[1])} +${a.credits}학점</span><button class="ghost" data-adj-del="${i}">삭제</button></div><div class="left">${esc(a.note || "")}</div></div>`).join("") : ""}
+        <div class="form-grid" style="margin-top:10px">
+          <label class="field">전공<select id="adjMajor">${imp.majors.map((m) => `<option>${esc(m.type)}</option>`).join("")}</select></label>
+          <label class="field">영역<select id="adjCat">${catOpts.map(([v, l]) => `<option value="${v}">${l}</option>`).join("")}</select></label>
+          <label class="field">학점<input type="number" id="adjCredits" inputmode="decimal" placeholder="예: 6"></label>
+          <label class="field">메모<input type="text" id="adjNote" placeholder="예: 졸업 시즌에 학과 문의"></label>
+        </div>
+        <button class="ghost" id="adjAdd" style="margin-top:10px">＋ 추가</button></div>`;
     }
     if (imp.general) {
       const g = imp.general;

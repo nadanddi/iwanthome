@@ -167,6 +167,8 @@ input:focus, textarea:focus { outline: 2px solid var(--accent); outline-offset: 
 .bar { display: flex; }
 .bar > i.taking { background: repeating-linear-gradient(45deg, var(--accent), var(--accent) 4px, transparent 4px, transparent 8px); opacity: .55; border-radius: 0 99px 99px 0; }
 .bar > i + i { border-radius: 0 99px 99px 0; }
+.bar > i.adj { background: repeating-linear-gradient(90deg, var(--good), var(--good) 3px, transparent 3px, transparent 6px); opacity: .7; }
+select { font: inherit; color: var(--text); background: var(--bg); border: 1px solid var(--line); border-radius: 10px; padding: 9px 11px; width: 100%; }
 .legend { display: flex; gap: 14px; font-size: 12px; color: var(--muted); margin-top: 6px; flex-wrap: wrap; }
 .legend i { display: inline-block; width: 10px; height: 10px; border-radius: 3px; background: var(--accent); margin-right: 4px; vertical-align: -1px; }
 .legend i.t { background: repeating-linear-gradient(45deg, var(--accent), var(--accent) 2px, transparent 2px, transparent 4px); opacity: .7; }
