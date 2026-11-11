@@ -404,11 +404,13 @@
     const h = rows[hi].map(norm), at = (n) => h.indexOf(n);
     const sems = new Map();
     let gp = 0, gc = 0, earned = 0, count = 0;
+    const courses = [];
     for (const row of rows.slice(hi + 1)) {
       const name = String(row[at("교과목명")] || "").trim(); if (!name) continue;
       if (String(row[at("미취득구분")] || "").trim()) continue; // 재이수로 지워진 성적 등
       const cr = toNum(row[at("학점")]), pv = String(row[at("평점")] ?? "").trim();
       earned += cr; count++;
+      if (cr > 0) courses.push({ name, cr, cat: String(row[at("이수구분")] || "").trim(), term: `${row[at("연도")] || ""} ${row[at("학기")] || ""}`.trim() });
       if (pv === "" || isNaN(Number(pv))) continue; // P/F 과목
       const year = String(row[at("연도")] || ""), term = String(row[at("학기")] || "");
       gp += cr * Number(pv); gc += cr;
@@ -418,7 +420,7 @@
     }
     const list = [...sems.values()].sort((a, b) => a.order - b.order).map((s) => ({ label: s.label, regular: s.regular, gpa: Math.round((s.p / s.c) * 100) / 100, credits: s.c }));
     const lastSem = [...list].reverse().find((s) => s.regular) || null;
-    return { overall: gc ? Math.round((gp / gc) * 100) / 100 : null, earned: r1(earned), count, semesters: list, lastSem };
+    return { overall: gc ? Math.round((gp / gc) * 100) / 100 : null, earned: r1(earned), count, semesters: list, lastSem, courses };
   }
   function parsePoints(rows) {
     const hi = headerIndex(rows, ["세부항목", "신청점수"]);
@@ -511,13 +513,20 @@
   });
   document.addEventListener("click", (e) => {
     if (e.target.id === "adjAdd") {
-      const credits = Number($("#adjCredits").value);
+      const picked = [...document.querySelectorAll("[data-adj-course]:checked")].map((x) => courses[Number(x.dataset.adjCourse)]);
+      const credits = picked.length ? r1(picked.reduce((a, c) => a + c.cr, 0)) : Number($("#adjCredits").value);
       if (!credits) { $("#adjCredits").focus(); return; }
-      (S.grad.adjust = S.grad.adjust || []).push({ major: $("#adjMajor").value, cat: $("#adjCat").value, credits, note: $("#adjNote").value.trim() });
+      (S.grad.adjust = S.grad.adjust || []).push({ major: $("#adjMajor").value, cat: $("#adjCat").value, credits, note: $("#adjNote").value.trim(), courses: picked });
       save(); renderGrad(); renderHome();
     }
     const del = e.target.closest("[data-adj-del]");
     if (del) { S.grad.adjust.splice(Number(del.dataset.adjDel), 1); save(); renderGrad(); renderHome(); }
+  });
+  document.addEventListener("change", (e) => {
+    if (!e.target.dataset || e.target.dataset.adjCourse === undefined) return;
+    const picked = [...document.querySelectorAll("[data-adj-course]:checked")].map((x) => courses[Number(x.dataset.adjCourse)]);
+    $("#adjCredits").value = picked.length ? r1(picked.reduce((a, c) => a + c.cr, 0)) : "";
+    $("#adjCredits").readOnly = picked.length > 0;
   });
   $("#clearImport").addEventListener("click", () => {
     if (!confirm("불러온 엑셀 값을 이 기기에서 지울까요?")) return;
@@ -539,10 +548,20 @@
   // 수강 중인 학점까지 넣고도 남는 졸업 항목
   // 인정 예정 학점 (예: 졸업 시즌에 학과 문의로 복수전공 학점 인정) — 학점을 옮기는 것이라 총 학점에는 더하지 않음
   const MAJOR_SUM_IDS = ["mreq", "msel", "adv"];
+  // 성적표의 이수구분 → 어느 전공의 어느 영역에서 빠지는지
+  const CAT_FROM = { "교양": ["본전공", "general"], "일반선택": ["본전공", "free"], "전공선택": ["본전공", "msel"], "전공필수": ["본전공", "mreq"], "전공심화": ["본전공", "adv"], "복수전공": ["복수전공", "msel"] };
+  const courseFrom = (c) => CAT_FROM[c.cat] || null;
   function adjOf(m, id) {
-    const list = (S.grad.adjust || []).filter((a) => a.major === m.type);
-    const sum = (ids) => r1(list.filter((a) => ids.includes(a.cat)).reduce((x, a) => x + num(a.credits), 0));
-    return id === "msum" ? sum(MAJOR_SUM_IDS) : sum([id]);
+    const ids = id === "msum" ? MAJOR_SUM_IDS : [id];
+    let v = 0;
+    for (const a of S.grad.adjust || []) {
+      if (a.major === m.type && ids.includes(a.cat)) v += num(a.credits);
+      for (const c of a.courses || []) {
+        const f = courseFrom(c);
+        if (f && m.type.includes(f[0]) && ids.includes(f[1])) v -= num(c.cr);
+      }
+    }
+    return r1(v);
   }
   function gradGaps() {
     const imp = S.grad.imported, out = [];
@@ -566,14 +585,25 @@
     return `<div class="bar${a >= 100 ? " good" : ""}"><i style="width:${a}%"></i>${b > 0 ? `<i class="taking" style="width:${b}%"></i>` : ""}${c > 0 ? `<i class="adj" style="width:${c}%"></i>` : ""}</div>`;
   }
   // 인정 예정 학점 카드 — 엑셀을 안 넣었어도 항상 보이게
+  let courses = [];
   function adjustCard(majors) {
     const list = majors && majors.length ? majors : [{ type: "본전공" }, { type: "복수전공" }];
     let html = "";
       const adj = S.grad.adjust || [];
+      // 이미 다른 항목에 쓴 과목은 빼고, 일반선택·교양부터 보여줌
+      const used = new Set(adj.flatMap((a) => (a.courses || []).map((c) => c.name + "|" + c.term)));
+      const order = ["일반선택", "교양", "전공선택", "전공필수", "복수전공"];
+      courses = ((S.grad.imported && S.grad.imported.grades && S.grad.imported.grades.courses) || [])
+        .filter((c) => !used.has(c.name + "|" + c.term))
+        .sort((a, b) => (order.indexOf(a.cat) + 1 || 9) - (order.indexOf(b.cat) + 1 || 9));
       const catOpts = [["mreq", "전공필수"], ["msel", "전공선택"], ["adv", "전공심화"], ["general", "교양"], ["free", "일반선택"]];
     html += `<div class="card"><h2>인정 예정 학점</h2>
-        <p class="hint">이미 들었지만 나중에 다른 영역으로 인정받기로 한 과목을 적어 두세요. 학점을 옮기는 것이라 총 학점에는 더하지 않고, 해당 영역의 남은 학점에서만 빼요.</p>
-        ${adj.length ? adj.map((a, i) => `<div class="credit"><div class="head"><span class="name">${esc(a.major)} ${esc((catOpts.find((c) => c[0] === a.cat) || [, a.cat])[1])} +${a.credits}학점</span><button class="ghost" data-adj-del="${i}">삭제</button></div><div class="left">${esc(a.note || "")}</div></div>`).join("") : ""}
+        <p class="hint">이미 들었지만 나중에 다른 영역으로 인정받기로 한 과목을 적어 두세요. 학점을 옮기는 것이라 총 학점은 그대로예요. 옮겨 갈 영역의 남은 학점은 줄고, 과목을 고르면 원래 영역(예: 일반선택)에서는 빠진 걸로 보여줘요.</p>
+        ${adj.length ? adj.map((a, i) => `<div class="credit"><div class="head"><span class="name">${esc(a.major)} ${esc((catOpts.find((c) => c[0] === a.cat) || [, a.cat])[1])} +${a.credits}학점</span><button class="ghost" data-adj-del="${i}">삭제</button></div>
+          ${a.courses && a.courses.length ? `<div class="left">← ${a.courses.map((c) => `${esc(c.name)} (${esc(c.cat)} ${c.cr})`).join(", ")}</div>` : ""}<div class="left">${esc(a.note || "")}</div></div>`).join("") : ""}
+        ${courses.length ? `<h3>과목 고르기 <span class="hint">취득성적 목록 기준 · 고르면 학점이 자동으로 채워져요</span></h3>
+          <div class="course-pick">${courses.map((c, i) => `<label><input type="checkbox" data-adj-course="${i}"> ${esc(c.name)} <small>${esc(c.cat)} · ${c.cr}학점 · ${esc(c.term)}</small></label>`).join("")}</div>`
+          : `<p class="hint">취득성적 목록 엑셀을 넣으면 과목을 골라서 추가할 수 있어요. 지금은 학점을 직접 입력하세요.</p>`}
         <div class="form-grid" style="margin-top:10px">
           <label class="field">전공<select id="adjMajor">${list.map((m) => `<option>${esc(m.type)}</option>`).join("")}</select></label>
           <label class="field">영역<select id="adjCat">${catOpts.map(([v, l]) => `<option value="${v}">${l}</option>`).join("")}</select></label>
@@ -597,10 +627,11 @@
         const rows = MAJOR_COLS.filter(([id]) => id !== "total" && (m.req[id] || m.done[id] || m.taking[id]));
         html += `<div class="card"><h2>${esc(m.type)} · ${esc(m.name)} <span class="hint">${esc(m.year)} 교육과정${m.type.includes("본전공") ? "" : ` · 총 ${m.req.total || 0}학점`}</span></h2>
           ${rows.map(([id, , label]) => {
-            const d = num(m.done[id]), tk = num(m.taking[id]), r = num(m.req[id]), aj = adjOf(m, id);
-            const after = r1(r - d - tk - aj);
+            const net = adjOf(m, id), d = num(m.done[id]), tk = num(m.taking[id]), r = num(m.req[id]), aj = Math.max(0, net), out = Math.max(0, -net);
+            const after = r1(r - d - tk - aj + out);
             let note = r === 0 ? "기준 없음" : d >= r ? "충족 ✓" : after <= 0 ? (aj ? "수강·인정 예정까지 넣으면 충족" : "이번 학기 끝나면 충족") : `${r1(r - d)}학점 남음${tk || aj ? ` · ${tk ? "수강" : ""}${tk && aj ? "·" : ""}${aj ? `인정 예정 ${aj}학점` : ""} 반영 후 ${after}학점` : ""}`;
             if (m.max[id] && d > m.max[id]) note += ` · 최대 ${m.max[id]}학점까지만 인정`;
+            if (out) note += ` · 다른 영역으로 인정 예정 ${out}학점 빠짐 → ${r1(d - out)}학점${r && d - out + tk < r ? " (기준 미달 주의)" : ""}`;
             return `<div class="credit"><div class="head"><span class="name">${label}${m.opt[id] ? `<span class="opt">선택</span>` : ""}</span>
               <span class="nums"><b>${d}</b>${tk ? ` + ${tk}` : ""}${aj ? ` + <span title="인정 예정">${aj}</span>` : ""} / ${r}${m.max[id] ? `~${m.max[id]}` : ""}학점</span></div>
               ${stackBar(d, tk, r, aj)}<div class="left">${note}${m.opt[id] ? " · 다전공(복수전공 등)을 하면 대신 인정되는 경우가 많아요. 학과에 확인하세요." : ""}</div></div>`;
