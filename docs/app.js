@@ -308,7 +308,7 @@
     const hasMajors = !!(imp && imp.majors && imp.majors.length);
     $("#gradManual").hidden = hasMajors;
     $("#clearImport").hidden = !(imp || S.pointsLog || S.beltStatus);
-    $("#gradImported").innerHTML = imp ? renderImported(imp) : "";
+    $("#gradImported").innerHTML = imp ? renderImported(imp) : adjustCard(null);
     $("#gradNote").hidden = !GRAD.provisional;
     $("#gradNote").textContent = GRAD.note || "";
     $("#gradCredits").innerHTML = GRAD.credits.map((c) => `
@@ -565,6 +565,24 @@
     const c = req ? Math.min(100 - a - b, (adj / req) * 100) : 0;
     return `<div class="bar${a >= 100 ? " good" : ""}"><i style="width:${a}%"></i>${b > 0 ? `<i class="taking" style="width:${b}%"></i>` : ""}${c > 0 ? `<i class="adj" style="width:${c}%"></i>` : ""}</div>`;
   }
+  // 인정 예정 학점 카드 — 엑셀을 안 넣었어도 항상 보이게
+  function adjustCard(majors) {
+    const list = majors && majors.length ? majors : [{ type: "본전공" }, { type: "복수전공" }];
+    let html = "";
+      const adj = S.grad.adjust || [];
+      const catOpts = [["mreq", "전공필수"], ["msel", "전공선택"], ["adv", "전공심화"], ["general", "교양"], ["free", "일반선택"]];
+    html += `<div class="card"><h2>인정 예정 학점</h2>
+        <p class="hint">이미 들었지만 나중에 다른 영역으로 인정받기로 한 과목을 적어 두세요. 학점을 옮기는 것이라 총 학점에는 더하지 않고, 해당 영역의 남은 학점에서만 빼요.</p>
+        ${adj.length ? adj.map((a, i) => `<div class="credit"><div class="head"><span class="name">${esc(a.major)} ${esc((catOpts.find((c) => c[0] === a.cat) || [, a.cat])[1])} +${a.credits}학점</span><button class="ghost" data-adj-del="${i}">삭제</button></div><div class="left">${esc(a.note || "")}</div></div>`).join("") : ""}
+        <div class="form-grid" style="margin-top:10px">
+          <label class="field">전공<select id="adjMajor">${list.map((m) => `<option>${esc(m.type)}</option>`).join("")}</select></label>
+          <label class="field">영역<select id="adjCat">${catOpts.map(([v, l]) => `<option value="${v}">${l}</option>`).join("")}</select></label>
+          <label class="field">학점<input type="number" id="adjCredits" inputmode="decimal" placeholder="예: 6"></label>
+          <label class="field">메모<input type="text" id="adjNote" placeholder="예: 졸업 시즌에 학과 문의"></label>
+        </div>
+        <button class="ghost" id="adjAdd" style="margin-top:10px">＋ 추가</button></div>`;
+    return html;
+  }
   function renderImported(imp) {
     let html = "";
     if (imp.majors && imp.majors.length) {
@@ -589,20 +607,8 @@
           }).join("")}</div>`;
       }
     }
-    if (imp.majors && imp.majors.length) {
-      const adj = S.grad.adjust || [];
-      const catOpts = [["mreq", "전공필수"], ["msel", "전공선택"], ["adv", "전공심화"], ["general", "교양"], ["free", "일반선택"]];
-      html += `<div class="card"><h2>인정 예정 학점</h2>
-        <p class="hint">이미 들었지만 나중에 다른 영역으로 인정받기로 한 과목을 적어 두세요. 학점을 옮기는 것이라 총 학점에는 더하지 않고, 해당 영역의 남은 학점에서만 빼요.</p>
-        ${adj.length ? adj.map((a, i) => `<div class="credit"><div class="head"><span class="name">${esc(a.major)} ${esc((catOpts.find((c) => c[0] === a.cat) || [, a.cat])[1])} +${a.credits}학점</span><button class="ghost" data-adj-del="${i}">삭제</button></div><div class="left">${esc(a.note || "")}</div></div>`).join("") : ""}
-        <div class="form-grid" style="margin-top:10px">
-          <label class="field">전공<select id="adjMajor">${imp.majors.map((m) => `<option>${esc(m.type)}</option>`).join("")}</select></label>
-          <label class="field">영역<select id="adjCat">${catOpts.map(([v, l]) => `<option value="${v}">${l}</option>`).join("")}</select></label>
-          <label class="field">학점<input type="number" id="adjCredits" inputmode="decimal" placeholder="예: 6"></label>
-          <label class="field">메모<input type="text" id="adjNote" placeholder="예: 졸업 시즌에 학과 문의"></label>
-        </div>
-        <button class="ghost" id="adjAdd" style="margin-top:10px">＋ 추가</button></div>`;
-    }
+    html += adjustCard(imp.majors);
+
     if (imp.general) {
       const g = imp.general;
       html += `<div class="card"><h2>교양 이수 내역 <span class="hint">총 ${g.total}학점</span></h2>
