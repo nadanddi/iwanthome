@@ -206,6 +206,8 @@ select { font: inherit; color: var(--text); background: var(--bg); border: 1px s
 .b.new { background: var(--bad); color: #fff; }
 .b.belt { color: #fff; }
 .b.login { background: var(--track); color: var(--muted); }
+.b.easy { background: var(--accent-soft); color: var(--accent); }
+.notices li.easy-hint { display: block; font-size: 12.5px; color: var(--muted); background: var(--accent-soft); border: 0; border-radius: 10px; padding: 10px 12px; margin-bottom: 6px; line-height: 1.6; }
 .mark { display: flex; flex-direction: column; gap: 4px; }
 .mark button { border: 1px solid var(--line); background: var(--card); color: var(--muted); border-radius: 8px; font: inherit; font-size: 12px; padding: 3px 8px; cursor: pointer; white-space: nowrap; }
 .mark button.on { background: var(--accent-soft); color: var(--accent); border-color: var(--accent); font-weight: 700; }

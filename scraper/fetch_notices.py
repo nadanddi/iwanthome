@@ -111,6 +111,30 @@ def extract_belts(text: str) -> list[str]:
     return out
 
 
+# 쉽게 포인트 받는 활동: 온라인 강의(아무 때나 수강) · 온라인 참여(Zoom 생중계 등) · 설문
+EASY_RULES = [
+    ("온라인 강의", re.compile(r"이러닝|e-?러닝|동영상\s*(?:강의|시청|교육)|VOD|녹화\s*강의|온라인\s*(?:비교과|콘텐츠|강의|강좌|수강|교육과정)|LMS\s*(?:로그인|접속|에서|수강)", re.I)),
+    ("온라인 참여", re.compile(r"zoom|줌\s*(?:링크|접속|참여)|온라인\s*(?:생중계|중계|참여|특강)|생중계|웨비나|webinar|비대면\s*(?:특강|교육|참여|강의)|유튜브\s*(?:라이브|생중계)", re.I)),
+    ("설문", re.compile(r"설문\s*(?:조사)?\s*(?:참여|응답|참가)|서베이|survey", re.I)),
+]
+# 제목이 이런 오프라인 활동이면 본문에 '온라인'이 있어도 쉬운 활동으로 보지 않음
+OFFLINE_TITLE = re.compile(r"캠프|탐방|모의고사|모의토익|집중교육|멘토링|워크숍|달인|공모전|대회|채용설명회|컨설팅|클래스|상담|모집\s*\(?\d+명|홍보대사|근로", re.I)
+
+
+def classify_easy(title: str, body: str = "") -> str | None:
+    for kind, rx in EASY_RULES:
+        if rx.search(title):
+            return kind
+    if re.search(r"설문|서베이|survey", title, re.I):
+        return "설문"
+    if OFFLINE_TITLE.search(title):
+        return None
+    for kind, rx in EASY_RULES:
+        if rx.search(body):
+            return kind
+    return None
+
+
 def extract_deadline(body: str, posted: str) -> str | None:
     """본문에서 '신청/접수 ... ~ 11.20' 같은 마감일을 대략 추정 (YYYY-MM-DD)."""
     if not body:
@@ -181,6 +205,7 @@ def enrich_main(item: dict) -> None:
     item["belts"] = extract_belts(item["title"] + " " + body[:600])
     item["deadline"] = extract_deadline(body, item["posted"])
     item["required"] = bool(re.search(r"필수", item["title"]))
+    item["easy"] = classify_easy(item["title"], body)
 
 
 # ---------------------------------------------------------------- 취업진로지원과
@@ -219,6 +244,7 @@ def scrape_career() -> dict[str, dict]:
             "belts": extract_belts(title),
             "deadline": deadline,
             "required": "필수" in title,
+            "easy": classify_easy(title),
         }
     return items
 
@@ -235,6 +261,8 @@ def notify(new_items: list[dict]) -> None:
             bits.append(f"+{it['points']}점")
         if it.get("belts"):
             bits.append("/".join(it["belts"]))
+        if it.get("easy"):
+            bits.append(it["easy"])
         if it.get("deadline"):
             bits.append(f"마감 {it['deadline'][5:].replace('-', '/')}")
         payload = {
@@ -268,17 +296,22 @@ def main() -> int:
 
     found = scrape_main_board()
     for key, it in found.items():
-        if key in old and "summary" in old[key]:
+        if key in old and "easy" in old[key]:
             old[key].update({k: it[k] for k in ("title", "posted")})
             found[key] = old[key]
         else:
             enrich_main(it)
+            if key in old and old[key].get("firstSeen"):
+                it["firstSeen"] = old[key]["firstSeen"]
             time.sleep(0.5)
     found.update(scrape_career())
 
     merged = {**old, **found}
     cutoff = (now_kst().date() - dt.timedelta(days=KEEP_DAYS)).isoformat()
     merged = {k: v for k, v in merged.items() if v.get("posted", "9999") >= cutoff}
+    for v in merged.values():  # 검색 결과에서 빠진 예전 공지는 저장된 요약으로 분류
+        if "easy" not in v:
+            v["easy"] = classify_easy(v.get("title", ""), v.get("summary", ""))
 
     stamp = now_kst().isoformat(timespec="minutes")
     new_items = []

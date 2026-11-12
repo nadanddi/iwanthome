@@ -664,18 +664,25 @@
     return NOTICES.notices.filter((n) => (n.deadline ? dday(n.deadline) >= 0 : dday(n.posted) >= -21));
   }
   const isNew = (n) => prevVisit && n.firstSeen && n.firstSeen > prevVisit;
+  // 쉬운 포인트: 수집기가 본문까지 보고 붙인 분류 (예전 데이터는 제목으로 대강 추정)
+  const EASY_ICON = { "온라인 강의": "💻", "온라인 참여": "🎥", "설문": "📝" };
+  const easyOf = (n) => n.easy !== undefined ? n.easy
+    : /설문|서베이/.test(n.title) ? "설문" : /이러닝|동영상|온라인\s*(?:강의|콘텐츠|비교과)/.test(n.title) ? "온라인 강의" : /온라인|비대면|zoom|생중계/i.test(n.title) ? "온라인 참여" : null;
   function noticeBadges(n) {
     const out = [];
     if (isNew(n)) out.push(`<span class="b new">NEW</span>`);
     if (n.required) out.push(`<span class="b req">필수</span>`);
     (n.belts || []).forEach((b) => out.push(beltBadge(b)));
     if (n.points) out.push(`<span class="b pt">+${n.points}점</span>`);
+    const ez = easyOf(n);
+    if (ez) out.push(`<span class="b easy">${EASY_ICON[ez] || ""} ${ez}</span>`);
     if (n.deadline) { const d = dday(n.deadline); out.push(`<span class="b dl ${d < 0 ? "past" : ""}">${d < 0 ? "마감" : "마감 " + ddLabel(d)}</span>`); }
     return out.join("");
   }
   const miniNotice = (n) => `<li><a href="${esc(n.url)}" target="_blank" rel="noopener">${esc(n.title)}</a><div class="meta">${noticeBadges(n)}<span>${esc(n.posted.slice(5).replace("-", "/"))}</span></div></li>`;
   const FILTERS = [
     { id: "mine", label: "내 벨트 (BLUE·RED·ORANGE)", f: (n) => (n.belts || []).some((b) => MY_BELTS.includes(b)) },
+    { id: "easy", label: "쉬운 포인트 (온라인·설문)", f: (n) => !!easyOf(n) && (!n.deadline || dday(n.deadline) >= 0) },
     { id: "points", label: "포인트 명시", f: (n) => !!n.points },
     { id: "open", label: "마감 전", f: (n) => !n.deadline || dday(n.deadline) >= 0 },
     { id: "saved", label: "★ 저장", f: (n) => !!S.notices.mark[n.id] },
@@ -686,13 +693,14 @@
     const f = FILTERS.find((x) => x.id === S.ui.filter) || FILTERS[0];
     const q = $("#noticeSearch").value.trim().toLowerCase();
     const list = NOTICES.notices.filter(f.f).filter((n) => !q || n.title.toLowerCase().includes(q));
-    $("#noticeList").innerHTML = list.length ? list.map((n) => {
+    const easyHint = f.id === "easy" ? `<li class="easy-hint">💻 <b>온라인 강의</b>: LMS 등에서 아무 때나 수강 · 🎥 <b>온라인 참여</b>: 정해진 시간에 Zoom·생중계로 참여 · 📝 <b>설문</b>: 응답만 하면 돼요.<br>공지 본문의 단어로 자동 분류한 거라, 포인트 조건(전체 시청, 소감문 등)은 원문에서 꼭 확인하세요.</li>` : "";
+    $("#noticeList").innerHTML = easyHint + (list.length ? list.map((n) => {
       const m = S.notices.mark[n.id];
       return `<li><div class="body"><a class="title" href="${esc(n.url)}" target="_blank" rel="noopener">${esc(n.title)}</a>
         <div class="meta">${noticeBadges(n)}<span>${esc(n.source)}</span><span>${esc(n.posted)}</span>${n.loginRequired ? `<span class="b login">로그인 필요</span>` : ""}</div>
         ${n.summary ? `<div class="sum">${esc(n.summary)}</div>` : ""}</div>
         <div class="mark"><button data-mark="${n.id}" data-v="star" class="${m === "star" ? "on" : ""}">★ 저장</button><button data-mark="${n.id}" data-v="applied" class="${m === "applied" ? "on" : ""}">신청함</button></div></li>`;
-    }).join("") : `<li class="empty">조건에 맞는 공지가 없어요.</li>`;
+    }).join("") : `<li class="empty">${f.id === "easy" ? "지금 열린 온라인·설문 포인트 공지가 없어요. 새로 올라오면 여기에 모여요." : "조건에 맞는 공지가 없어요."}</li>`);
     const nc = NOTICES.notices.filter(isNew).length;
     $("#newCount").hidden = !nc; $("#newCount").textContent = nc;
   }
