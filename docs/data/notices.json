@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-12T02:03+09:00",
+ "updated": "2026-11-12T09:31+09:00",
  "notices": [
   {
    "id": "main-219703",
@@ -85,9 +85,8 @@
     "BLUE",
     "RED"
    ],
-   "deadline": "2026-11-13",
-   "required": true,
-   "firstSeen": "2026-11-12T02:03+09:00"
+   "deadline": "2026-11-12",
+   "required": true
   },
   {
    "id": "career-405759",
@@ -102,7 +101,7 @@
     "BLUE",
     "RED"
    ],
-   "deadline": "2026-11-12",
+   "deadline": null,
    "required": true
   },
   {
@@ -131,7 +130,7 @@
    "summary": "",
    "points": null,
    "belts": [],
-   "deadline": "2026-11-16",
+   "deadline": "2026-11-15",
    "required": false
   },
   {
