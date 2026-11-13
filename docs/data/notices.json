@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-13T19:50+09:00",
+ "updated": "2026-11-14T04:33+09:00",
  "notices": [
   {
    "id": "main-219838",
@@ -118,7 +118,7 @@
     "BLUE",
     "RED"
    ],
-   "deadline": "2026-11-13",
+   "deadline": "2026-11-14",
    "required": true,
    "easy": null
   },
@@ -134,7 +134,7 @@
    "belts": [
     "YELLOW"
    ],
-   "deadline": "2026-11-15",
+   "deadline": "2026-11-16",
    "required": true,
    "easy": null
   },
@@ -152,7 +152,7 @@
     "BLUE",
     "RED"
    ],
-   "deadline": "2026-11-27",
+   "deadline": "2026-11-28",
    "required": false,
    "easy": null
   },
