@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-12T19:54+09:00",
+ "updated": "2026-11-13T10:47+09:00",
  "notices": [
   {
    "id": "main-219755",
@@ -14,6 +14,7 @@
    ],
    "deadline": null,
    "required": true,
+   "easy": null,
    "firstSeen": "2026-11-12T19:54+09:00"
   },
   {
@@ -27,6 +28,7 @@
    "belts": [],
    "deadline": null,
    "required": false,
+   "easy": null,
    "firstSeen": "2026-11-12T19:54+09:00"
   },
   {
@@ -40,6 +42,7 @@
    "belts": [],
    "deadline": null,
    "required": false,
+   "easy": null,
    "firstSeen": "2026-11-12T19:54+09:00"
   },
   {
@@ -57,6 +60,7 @@
    ],
    "deadline": null,
    "required": false,
+   "easy": null,
    "firstSeen": "2026-11-12T19:54+09:00"
   },
   {
@@ -74,7 +78,7 @@
    ],
    "deadline": "2026-11-13",
    "required": true,
-   "firstSeen": "2026-11-12T19:54+09:00"
+   "easy": null
   },
   {
    "id": "career-405947",
@@ -90,7 +94,7 @@
    ],
    "deadline": "2026-11-15",
    "required": true,
-   "firstSeen": "2026-11-12T19:54+09:00"
+   "easy": null
   },
   {
    "id": "career-405864",
@@ -108,7 +112,7 @@
    ],
    "deadline": "2026-11-27",
    "required": false,
-   "firstSeen": "2026-11-12T19:54+09:00"
+   "easy": null
   },
   {
    "id": "main-219703",
@@ -123,6 +127,7 @@
    ],
    "deadline": null,
    "required": true,
+   "easy": null,
    "firstSeen": "2026-11-12T02:03+09:00"
   },
   {
@@ -136,6 +141,7 @@
    "belts": [],
    "deadline": null,
    "required": false,
+   "easy": null,
    "firstSeen": "2026-11-11T15:49+09:00"
   },
   {
@@ -149,6 +155,7 @@
    "belts": [],
    "deadline": null,
    "required": false,
+   "easy": null,
    "firstSeen": "2026-11-11T15:49+09:00"
   },
   {
@@ -164,6 +171,7 @@
    ],
    "deadline": null,
    "required": true,
+   "easy": null,
    "firstSeen": "2026-11-11T15:49+09:00"
   },
   {
@@ -179,6 +187,7 @@
    ],
    "deadline": null,
    "required": true,
+   "easy": null,
    "firstSeen": "2026-11-11T15:49+09:00"
   },
   {
@@ -195,7 +204,8 @@
     "RED"
    ],
    "deadline": "2026-11-12",
-   "required": true
+   "required": true,
+   "easy": null
   },
   {
    "id": "career-405759",
@@ -211,7 +221,8 @@
     "RED"
    ],
    "deadline": null,
-   "required": true
+   "required": true,
+   "easy": null
   },
   {
    "id": "career-405738",
@@ -227,7 +238,8 @@
     "RED"
    ],
    "deadline": "2026-11-11",
-   "required": true
+   "required": true,
+   "easy": null
   },
   {
    "id": "career-405736",
@@ -240,7 +252,8 @@
    "points": null,
    "belts": [],
    "deadline": "2026-11-15",
-   "required": false
+   "required": false,
+   "easy": null
   },
   {
    "id": "main-219645",
@@ -253,6 +266,7 @@
    "belts": [],
    "deadline": null,
    "required": false,
+   "easy": "온라인 참여",
    "firstSeen": "2026-11-11T15:49+09:00"
   },
   {
@@ -268,6 +282,7 @@
    ],
    "deadline": null,
    "required": false,
+   "easy": null,
    "firstSeen": "2026-11-11T15:49+09:00"
   },
   {
@@ -281,6 +296,7 @@
    "belts": [],
    "deadline": null,
    "required": false,
+   "easy": null,
    "firstSeen": "2026-11-11T15:49+09:00"
   },
   {
@@ -294,6 +310,7 @@
    "belts": [],
    "deadline": null,
    "required": false,
+   "easy": "온라인 강의",
    "firstSeen": "2026-11-11T15:49+09:00"
   },
   {
@@ -307,6 +324,7 @@
    "belts": [],
    "deadline": "2026-11-11",
    "required": false,
+   "easy": null,
    "firstSeen": "2026-11-11T15:49+09:00"
   },
   {
@@ -322,6 +340,7 @@
    ],
    "deadline": null,
    "required": true,
+   "easy": null,
    "firstSeen": "2026-11-11T15:49+09:00"
   },
   {
@@ -339,6 +358,7 @@
    ],
    "deadline": null,
    "required": false,
+   "easy": null,
    "firstSeen": "2026-11-11T15:49+09:00"
   },
   {
@@ -352,6 +372,7 @@
    "belts": [],
    "deadline": "2026-11-07",
    "required": false,
+   "easy": null,
    "firstSeen": "2026-11-11T15:49+09:00"
   },
   {
@@ -367,6 +388,7 @@
    ],
    "deadline": null,
    "required": true,
+   "easy": null,
    "firstSeen": "2026-11-11T15:49+09:00"
   },
   {
@@ -380,6 +402,7 @@
    "belts": [],
    "deadline": "2026-11-08",
    "required": false,
+   "easy": null,
    "firstSeen": "2026-11-11T15:49+09:00"
   },
   {
@@ -395,6 +418,7 @@
    ],
    "deadline": null,
    "required": true,
+   "easy": null,
    "firstSeen": "2026-11-11T15:49+09:00"
   },
   {
@@ -408,6 +432,7 @@
    "belts": [],
    "deadline": null,
    "required": false,
+   "easy": null,
    "firstSeen": "2026-11-11T15:49+09:00"
   },
   {
@@ -421,6 +446,7 @@
    "belts": [],
    "deadline": "2026-11-07",
    "required": false,
+   "easy": null,
    "firstSeen": "2026-11-11T15:49+09:00"
   },
   {
@@ -436,6 +462,7 @@
    ],
    "deadline": null,
    "required": true,
+   "easy": null,
    "firstSeen": "2026-11-11T15:49+09:00"
   },
   {
@@ -449,6 +476,7 @@
    "belts": [],
    "deadline": "2026-11-06",
    "required": false,
+   "easy": null,
    "firstSeen": "2026-11-11T15:49+09:00"
   },
   {
@@ -462,6 +490,7 @@
    "belts": [],
    "deadline": null,
    "required": false,
+   "easy": null,
    "firstSeen": "2026-11-11T15:49+09:00"
   },
   {
@@ -475,6 +504,7 @@
    "belts": [],
    "deadline": "2026-11-10",
    "required": false,
+   "easy": "온라인 참여",
    "firstSeen": "2026-11-11T15:49+09:00"
   },
   {
@@ -488,6 +518,7 @@
    "belts": [],
    "deadline": null,
    "required": false,
+   "easy": null,
    "firstSeen": "2026-11-11T15:49+09:00"
   },
   {
@@ -501,6 +532,7 @@
    "belts": [],
    "deadline": null,
    "required": false,
+   "easy": null,
    "firstSeen": "2026-11-11T15:49+09:00"
   },
   {
@@ -514,6 +546,7 @@
    "belts": [],
    "deadline": null,
    "required": false,
+   "easy": null,
    "firstSeen": "2026-11-11T15:49+09:00"
   },
   {
@@ -530,6 +563,7 @@
    ],
    "deadline": null,
    "required": true,
+   "easy": null,
    "firstSeen": "2026-11-11T15:49+09:00"
   },
   {
@@ -545,6 +579,7 @@
    ],
    "deadline": null,
    "required": false,
+   "easy": null,
    "firstSeen": "2026-11-11T15:49+09:00"
   },
   {
@@ -558,6 +593,7 @@
    "belts": [],
    "deadline": null,
    "required": false,
+   "easy": null,
    "firstSeen": "2026-11-11T15:49+09:00"
   },
   {
@@ -571,7 +607,8 @@
    "belts": [],
    "deadline": "2026-11-06",
    "required": false,
-   "firstSeen": "2026-11-11T15:49+09:00"
+   "firstSeen": "2026-11-11T15:49+09:00",
+   "easy": null
   },
   {
    "id": "main-219341",
@@ -587,6 +624,7 @@
    ],
    "deadline": null,
    "required": false,
+   "easy": null,
    "firstSeen": "2026-11-11T15:49+09:00"
   },
   {
@@ -600,7 +638,8 @@
    "belts": [],
    "deadline": "2026-11-12",
    "required": false,
-   "firstSeen": "2026-11-11T15:49+09:00"
+   "firstSeen": "2026-11-11T15:49+09:00",
+   "easy": null
   },
   {
    "id": "main-219315",
@@ -615,6 +654,7 @@
    ],
    "deadline": null,
    "required": true,
+   "easy": null,
    "firstSeen": "2026-11-11T15:49+09:00"
   },
   {
@@ -630,6 +670,7 @@
    ],
    "deadline": null,
    "required": false,
+   "easy": null,
    "firstSeen": "2026-11-11T15:49+09:00"
   },
   {
@@ -643,6 +684,7 @@
    "belts": [],
    "deadline": "2026-12-02",
    "required": false,
+   "easy": null,
    "firstSeen": "2026-11-11T15:49+09:00"
   },
   {
@@ -660,6 +702,7 @@
    ],
    "deadline": null,
    "required": false,
+   "easy": null,
    "firstSeen": "2026-11-11T15:49+09:00"
   },
   {
@@ -675,6 +718,7 @@
    ],
    "deadline": null,
    "required": false,
+   "easy": null,
    "firstSeen": "2026-11-11T15:49+09:00"
   },
   {
@@ -690,6 +734,7 @@
    ],
    "deadline": null,
    "required": true,
+   "easy": null,
    "firstSeen": "2026-11-11T15:49+09:00"
   },
   {
@@ -705,6 +750,7 @@
    ],
    "deadline": null,
    "required": true,
+   "easy": null,
    "firstSeen": "2026-11-11T15:49+09:00"
   },
   {
@@ -721,6 +767,7 @@
    ],
    "deadline": null,
    "required": true,
+   "easy": null,
    "firstSeen": "2026-11-11T15:49+09:00"
   },
   {
@@ -737,6 +784,7 @@
    ],
    "deadline": null,
    "required": true,
+   "easy": null,
    "firstSeen": "2026-11-11T15:49+09:00"
   },
   {
@@ -752,6 +800,7 @@
    ],
    "deadline": null,
    "required": true,
+   "easy": null,
    "firstSeen": "2026-11-11T15:49+09:00"
   },
   {
@@ -767,7 +816,8 @@
    ],
    "deadline": null,
    "required": false,
-   "firstSeen": "2026-11-11T15:49+09:00"
+   "firstSeen": "2026-11-11T15:49+09:00",
+   "easy": null
   },
   {
    "id": "main-218860",
@@ -782,7 +832,8 @@
    ],
    "deadline": null,
    "required": false,
-   "firstSeen": "2026-11-11T15:49+09:00"
+   "firstSeen": "2026-11-11T15:49+09:00",
+   "easy": null
   },
   {
    "id": "main-218859",
@@ -799,7 +850,8 @@
    ],
    "deadline": null,
    "required": false,
-   "firstSeen": "2026-11-11T15:49+09:00"
+   "firstSeen": "2026-11-11T15:49+09:00",
+   "easy": null
   },
   {
    "id": "main-218660",
@@ -815,6 +867,7 @@
    ],
    "deadline": null,
    "required": true,
+   "easy": null,
    "firstSeen": "2026-11-11T15:49+09:00"
   },
   {
@@ -831,6 +884,7 @@
    ],
    "deadline": null,
    "required": true,
+   "easy": null,
    "firstSeen": "2026-11-11T15:49+09:00"
   },
   {
@@ -844,6 +898,7 @@
    "belts": [],
    "deadline": null,
    "required": false,
+   "easy": null,
    "firstSeen": "2026-11-11T15:49+09:00"
   },
   {
@@ -860,6 +915,7 @@
    ],
    "deadline": null,
    "required": true,
+   "easy": null,
    "firstSeen": "2026-11-11T15:49+09:00"
   },
   {
@@ -876,6 +932,7 @@
    ],
    "deadline": null,
    "required": true,
+   "easy": null,
    "firstSeen": "2026-11-11T15:49+09:00"
   }
  ]
