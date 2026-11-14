@@ -1,6 +1,53 @@
 {
- "updated": "2026-11-14T10:24+09:00",
+ "updated": "2026-11-14T19:06+09:00",
  "notices": [
+  {
+   "id": "main-219850",
+   "source": "교내공지",
+   "title": "[YELLOW BELT 필수] 2026년 2학기 해외취업 특강(※2-3차) 신청 안내",
+   "posted": "2026-11-14",
+   "url": "https://www.jbnu.ac.kr/web/Board/219850/detailView.do?pageIndex=1&menu=2377",
+   "summary": ">\n 취업진로지원과 바로가기",
+   "points": null,
+   "belts": [
+    "YELLOW"
+   ],
+   "deadline": null,
+   "required": true,
+   "easy": null,
+   "firstSeen": "2026-11-14T19:06+09:00"
+  },
+  {
+   "id": "main-219849",
+   "source": "교내공지",
+   "title": "[YELLOW BELT 필수]취업 트렌드 특강(5-8차) 신청 안내<※대진설 1시간인정>",
+   "posted": "2026-11-14",
+   "url": "https://www.jbnu.ac.kr/web/Board/219849/detailView.do?pageIndex=1&menu=2377",
+   "summary": ">\n 취업진로지원과 바로가기",
+   "points": null,
+   "belts": [
+    "YELLOW"
+   ],
+   "deadline": null,
+   "required": true,
+   "easy": null,
+   "firstSeen": "2026-11-14T19:06+09:00"
+  },
+  {
+   "id": "career-406083",
+   "source": "취업진로지원과",
+   "title": "2026년 2학기 취업 트렌드 특강(5-8차) 신청안내 대진설 1시간인정",
+   "posted": "2026-11-14",
+   "url": "https://career.jbnu.ac.kr/bbs/career/3682/406083/artclView.do?layout=unknown",
+   "loginRequired": true,
+   "summary": "",
+   "points": null,
+   "belts": [],
+   "deadline": "2026-11-19",
+   "required": false,
+   "easy": null,
+   "firstSeen": "2026-11-14T19:06+09:00"
+  },
   {
    "id": "main-219838",
    "source": "교내공지",
