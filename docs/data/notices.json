@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-14T04:33+09:00",
+ "updated": "2026-11-14T10:24+09:00",
  "notices": [
   {
    "id": "main-219838",
@@ -108,7 +108,7 @@
   {
    "id": "career-405957",
    "source": "취업진로지원과",
-   "title": "[RED/BLUE필수]2026년 2차 직무 자격증 과정 추가모집(★중복신청가능★)",
+   "title": "[RED/BLUE필수]2차 직무자격증 과정 추가모집(★6시그마GB★)",
    "posted": "2026-11-12",
    "url": "https://career.jbnu.ac.kr/bbs/career/3682/405957/artclView.do?layout=unknown",
    "loginRequired": true,
@@ -118,7 +118,7 @@
     "BLUE",
     "RED"
    ],
-   "deadline": "2026-11-14",
+   "deadline": "2026-11-19",
    "required": true,
    "easy": null
   },
@@ -134,7 +134,7 @@
    "belts": [
     "YELLOW"
    ],
-   "deadline": "2026-11-16",
+   "deadline": "2026-11-15",
    "required": true,
    "easy": null
   },
@@ -152,7 +152,7 @@
     "BLUE",
     "RED"
    ],
-   "deadline": "2026-11-28",
+   "deadline": "2026-11-27",
    "required": false,
    "easy": null
   },
