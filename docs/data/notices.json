@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-16T15:09+09:00",
+ "updated": "2026-11-17T04:31+09:00",
  "notices": [
   {
    "id": "main-219886",
@@ -119,7 +119,7 @@
    "summary": "",
    "points": null,
    "belts": [],
-   "deadline": "2026-11-19",
+   "deadline": "2026-11-20",
    "required": false,
    "easy": null
   },
@@ -240,7 +240,7 @@
     "BLUE",
     "RED"
    ],
-   "deadline": "2026-11-19",
+   "deadline": "2026-11-20",
    "required": true,
    "easy": null
   },
