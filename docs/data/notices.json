@@ -1,6 +1,38 @@
 {
- "updated": "2026-11-16T07:44+09:00",
+ "updated": "2026-11-16T15:09+09:00",
  "notices": [
+  {
+   "id": "main-219886",
+   "source": "교내공지",
+   "title": "[YELLOW BELT 필수선택] 진로설정캠프(2차) 참여자 추가모집(~11.18.)",
+   "posted": "2026-11-16",
+   "url": "https://www.jbnu.ac.kr/web/Board/219886/detailView.do?pageIndex=1&menu=2377",
+   "summary": ">",
+   "points": null,
+   "belts": [
+    "YELLOW"
+   ],
+   "deadline": null,
+   "required": true,
+   "easy": null,
+   "firstSeen": "2026-11-16T15:09+09:00"
+  },
+  {
+   "id": "main-219869",
+   "source": "교내공지",
+   "title": "[BLUE BELT] 입사지원서 작성법 집중교육 참여자 모집 안내(졸업생 참여 가능)",
+   "posted": "2026-11-16",
+   "url": "https://www.jbnu.ac.kr/web/Board/219869/detailView.do?pageIndex=1&menu=2377",
+   "summary": ">\n 2026년 하반기 입사지원서 작성법 집중교육 일정 및 신청 안내 \n <수료 기준> \n ① 기초과정: 입사지원서 작성법 집중교육(3시간) 100% 참여 + 교육 후 입사지원서 클리닉(온라인 시스템) 참여 + 만족도 조사 참여 \n ※ 입사지원서 클리닉은 작성한 입사지원서를 온라인으로 제출하여 48시간 이내로 피드백을 받는 입사지원서 코칭 시스템입니다. \n ② 심화과정: 입사지원서 작성법 집중교육(3시간) 및 1:1 컨설팅(약 20분) 참여 + 만족도 조사 참여 \n ※ 1:1 컨설팅에는 작성한 자기소개서를 지참하여 참여해야 합니다. \n <참고> \n① 자기소개서(입사지원서) 양식은 본인이 희망하는 기업의 양식을 활용하거나 첨부되어 있는 입사지원서 양식을 활용하여 작성하시기 바랍니다.\n ② 공결요청서는 프로그램",
+   "points": null,
+   "belts": [
+    "BLUE"
+   ],
+   "deadline": null,
+   "required": false,
+   "easy": null,
+   "firstSeen": "2026-11-16T15:09+09:00"
+  },
   {
    "id": "main-219860",
    "source": "교내공지",
@@ -16,6 +48,20 @@
    "required": true,
    "easy": null,
    "firstSeen": "2026-11-16T01:16+09:00"
+  },
+  {
+   "id": "main-219859",
+   "source": "교내공지",
+   "title": "[언어교육부] 12월 외국어 강좌 안내/토익,토익스피킹 시험 할인 안내 (강의계획서 붙임 참조)",
+   "posted": "2026-11-15",
+   "url": "https://www.jbnu.ac.kr/web/Board/219859/detailView.do?pageIndex=1&menu=2377",
+   "summary": ">\n <수강신청 바로가기> \n https://jump.jbnu.ac.kr/felelgn \n <강사 상시 공개 모집> \n 전북대학교 언어교육부에서는 영어, 일본어, 중국어 등 다양한 외국어 강좌를 운영하고 있습니다. \n 상시 공개 모집을 통해 실력있는 선생님들을 모시고 있습니다. \n 외국어 강좌 운영에 관심이 있으신 선생님께서는 언제든지 아래로 연락주시기 바랍니다. 감사합니다. \n 1. 카카오톡 플러스친구(\"전북대 언어교육부\" 검색) : https://pf.kakao.com/_xbYIxkK/chat \n 2. 전화 : 063-270-3667 \n 3. 이메일 : lec@jbnu.ac.kr \n ----------------------------------- \n ※ 최종 시간표는 \"언어교육부 전용 JUMP\"에서 확인",
+   "points": null,
+   "belts": [],
+   "deadline": null,
+   "required": false,
+   "easy": null,
+   "firstSeen": "2026-11-16T15:09+09:00"
   },
   {
    "id": "main-219858",
@@ -73,7 +119,7 @@
    "summary": "",
    "points": null,
    "belts": [],
-   "deadline": "2026-11-21",
+   "deadline": "2026-11-19",
    "required": false,
    "easy": null
   },
@@ -194,7 +240,7 @@
     "BLUE",
     "RED"
    ],
-   "deadline": "2026-11-21",
+   "deadline": "2026-11-19",
    "required": true,
    "easy": null
   },
