@@ -764,5 +764,5 @@
     })
     .catch((err) => { $("#updated").textContent = "데이터를 불러오지 못했어요: " + err.message; });
 
-  if ("serviceWorker" in navigator && location.protocol === "https:") navigator.serviceWorker.register("sw.js").catch(() => {});
+  if ("serviceWorker" in navigator && location.protocol === "https:") navigator.serviceWorker.register("sw.js", { updateViaCache: "none" }).catch(() => {});
 })();
