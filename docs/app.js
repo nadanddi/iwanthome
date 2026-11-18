@@ -49,6 +49,11 @@
   function langGrade(toeic) {
     let g = 0;
     if (toeic) { const x = BELTS.languageGrades.find((x) => toeic >= x.toeic && x.toeic > 0); g = x ? x.grade : 1; }
+    // 승인내역의 활동영역에 적힌 등급 (예: 'TOEIC 2등급 (500 이상)')
+    for (const it of (S.pointsLog && S.pointsLog.items) || []) {
+      const m = /외국어/.test(it.cat) && it.pts > 0 && /(\d)\s*등급/.exec(it.area || "");
+      if (m) g = Math.max(g, Number(m[1]));
+    }
     return g;
   }
   function langGradeFromPoints() {
@@ -63,11 +68,13 @@
   function matchLog(re, since) {
     if (!S.pointsLog || !re) return [];
     const rx = new RegExp(re, "i");
-    return S.pointsLog.items.filter((it) => (!since || it.date >= since) && rx.test(`${it.sub} ${it.name}`));
+    return S.pointsLog.items.filter((it) => (!since || it.date >= since) && rx.test(`${it.sub} ${it.area || ""} ${it.name}`));
   }
-  const official = (id) => (S.beltStatus && S.beltStatus.belts && S.beltStatus.belts[id]) || null;
+  // 벨트 현황 엑셀보다 포인트 엑셀을 나중에 넣었으면, 오래된 벨트 현황 대신 포인트 내역으로 계산
+  const beltStatusFresh = () => !!S.beltStatus && !(S.pointsLog && S.pointsLog.importedAt > (S.beltStatus.importedAt || ""));
+  const official = (id) => (beltStatusFresh() && S.beltStatus.belts && S.beltStatus.belts[id]) || null;
   function officialTotal() {
-    if (!S.beltStatus) return null;
+    if (!beltStatusFresh()) return null;
     // 기준을 넘으면 부족분이 0으로 잘리므로 가장 큰 값을 씀 (ORANGE는 2026.3 이후만 세서 제외)
     const vals = Object.entries(S.beltStatus.belts).filter(([id, x]) => id !== "ORANGE" && x.total).map(([, x]) => x.total.need - x.total.short);
     return vals.length ? Math.max(...vals) : null;
@@ -201,7 +208,7 @@
     const log = S.pointsLog;
     $("#myStatus").innerHTML = `
       ${log
-        ? `<div class="field">누적 큰사람 포인트<div class="big-total" style="margin:0"><b>${fmt(totalPoints())}</b><span>점 · 승인 ${log.items.length}건</span></div><span class="hint" style="margin:0">${officialTotal() !== null ? "벨트이수현황 기준 · 대학영역 제외" : "승인내역 엑셀 기준"}</span></div>`
+        ? `<div class="field">누적 큰사람 포인트<div class="big-total" style="margin:0"><b>${fmt(totalPoints())}</b><span>점 · 승인 ${log.items.length}건</span></div><span class="hint" style="margin:0">${officialTotal() !== null ? "벨트이수현황 기준 · 대학영역 제외" : S.beltStatus ? "벨트 현황보다 최신인 포인트 엑셀 기준" : "승인내역 엑셀 기준"}</span></div>`
         : `<label class="field">누적 큰사람 포인트<input type="number" inputmode="numeric" data-my="points" value="${S.my.points ?? ""}" placeholder="예: 1180"></label>`}
       <label class="field">직전학기 성적 (평점)<input type="number" step="0.01" inputmode="decimal" data-my="gpa" value="${S.my.gpa ?? ""}" placeholder="예: 3.85"></label>
       <label class="field">TOEIC 최고점 (정규)<input type="number" inputmode="numeric" data-my="toeic" value="${S.my.toeic ?? ""}" placeholder="예: 765"><span class="hint" style="margin:0">${lg ? `외국어 ${lg}등급` : "다른 시험이면 아래 체크로 대신"}</span></label>
@@ -350,7 +357,7 @@
     if (headerIndex(rows, ["전공구분", "총학점"]) >= 0) return "majors";
     if (headerIndex(rows, ["교양영역", "과목명"]) >= 0) return "general";
     if (headerIndex(rows, ["교과목명", "평점"]) >= 0) return "grades";
-    if (headerIndex(rows, ["세부항목", "신청점수"]) >= 0) return "points";
+    if (headerIndex(rows, ["세부항목", "신청점수"]) >= 0 || headerIndex(rows, ["세부항목", "승인점수"]) >= 0) return "points";
     if (headerIndex(rows, ["벨트항목구분", "벨트항목"]) >= 0) return "belt";
     return null;
   }
@@ -423,15 +430,18 @@
     return { overall: gc ? Math.round((gp / gc) * 100) / 100 : null, earned: r1(earned), count, semesters: list, lastSem, courses };
   }
   function parsePoints(rows) {
-    const hi = headerIndex(rows, ["세부항목", "신청점수"]);
+    // 예전 '포인트 승인내역 조회'(신청점수) 또는 '큰사람프로젝트' 엑셀(승인점수, 승인된 것만)
+    let hi = headerIndex(rows, ["세부항목", "신청점수"]);
+    if (hi < 0) hi = headerIndex(rows, ["세부항목", "승인점수"]);
     const h = rows[hi].map(norm), at = (n) => h.indexOf(n);
+    const ptsCol = at("승인점수") >= 0 ? at("승인점수") : at("신청점수");
     const items = [];
     for (const row of rows.slice(hi + 1)) {
       const name = String(row[at("프로그램명")] || "").trim(); if (!name) continue;
       const status = String(row[at("승인구분")] || "").trim();
       if (status && status !== "승인") continue; // 대기·반려는 제외
-      items.push({ cat: String(row[at("항목")] || "").trim(), sub: String(row[at("세부항목")] || "").trim(), name,
-        date: String(row[at("승인일자")] || row[at("신청일자")] || "").slice(0, 10), pts: toNum(row[at("신청점수")]) });
+      items.push({ cat: String(row[at("항목")] || "").trim(), sub: String(row[at("세부항목")] || "").trim(), area: String(row[at("활동영역")] || "").trim(), name,
+        date: String(row[at("승인일자")] || row[at("신청일자")] || "").slice(0, 10), pts: toNum(row[ptsCol]) });
     }
     return { items, importedAt: new Date().toISOString() };
   }
