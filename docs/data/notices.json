@@ -1,6 +1,82 @@
 {
- "updated": "2026-11-19T11:29+09:00",
+ "updated": "2026-11-19T20:27+09:00",
  "notices": [
+  {
+   "id": "main-220054",
+   "source": "교내공지",
+   "title": "[언어교육부] 11월 외국어 강좌 특강 안내(재학생 큰사람 포인트 10점 부여)",
+   "posted": "2026-11-19",
+   "url": "https://www.jbnu.ac.kr/web/Board/220054/detailView.do?pageIndex=1&menu=2377",
+   "summary": ">\n 언어교육부에서 재학생 및 일반인분들을 위한 유익한 외국어 강좌 특강을\n JBNU 인터내셔널센터에서 다음과 같이 실시하오니 많은 참여 바랍니다 . \n ○ 참가혜택 : 재학생 큰사람 포인트 10 점 부여 (12 월 중 지급 ) \n ○ 문의 : https://pf.kakao.com/_xbYIxkK/chat ( 카카오톡 플러스친구 ) \n ○ 신청방법 아래 참조 \n <신청 바로가기> \n https://jump.jbnu.ac.kr/felelgn",
+   "points": 10,
+   "belts": [],
+   "deadline": null,
+   "required": false,
+   "easy": null,
+   "firstSeen": "2026-11-19T20:27+09:00"
+  },
+  {
+   "id": "main-220053",
+   "source": "교내공지",
+   "title": "[언어교육부] 12월 19일(토) 모의토익 실시 안내",
+   "posted": "2026-11-19",
+   "url": "https://www.jbnu.ac.kr/web/Board/220053/detailView.do?pageIndex=1&menu=2377",
+   "summary": ">\n 언어교육부에서 아래와 같이 모의토익을 실시하오니, 많은 관심 부탁드립니다. \n 1. 실시 일시: 12. 19.(토) 10:00 \n 2. 실시 장소: JBNU인터내셔널센터 5층 강의실(1층 출입문에 고사실 안내) \n 3. 응시료: 17,000원 \n 4. 접수 기간: 11. 17.(화) ~ 12. 5.(토) \n 5. 신청 방법 \n 가. 언어교육부 수강신청 사이트 로그인( https://jump.jbnu.ac.kr/felelgn )-언어교육부-수강신청-모의토익 접수 및 납부 후 \n 나. YBM사이트 접수: https://ipexam.toeic.co.kr/jbnu \n 6. 응시 혜택(학부생 해당) \n 가. 점수에 상관없이 큰사람포인트 20점 지급(1회) \n - 신청 방법: JUMP - 원스탑(대학) - 비교과",
+   "points": 20,
+   "belts": [],
+   "deadline": "2026-12-05",
+   "required": false,
+   "easy": null,
+   "firstSeen": "2026-11-19T20:27+09:00"
+  },
+  {
+   "id": "main-220050",
+   "source": "교내공지",
+   "title": "[연금관리학과] 2026학년도 국민연금공단 현직자 특강(1차) 사전신청 안내 (큰사람포인트 20점, 간식증정)",
+   "posted": "2026-11-19",
+   "url": "https://www.jbnu.ac.kr/web/Board/220050/detailView.do?pageIndex=1&menu=2377",
+   "summary": ">\n ﻿1. 초청 명사 : 국민연금공단 연구위원 현직자 \n 2. 일시/장소 : 2026. 11. 23.(월) 14:00, 경상대학 2호관 402호\n 4. 참여대상 : 전북대학교 전체 재학생\n 5. 신청방법 : 구글폼 신청 \n https://forms.gle/dygQsWWMcLzZmQmX6 \n 6. 참여혜택 : 큰사람포인트 20점, 간식제공(샌드위치+음료)\n 신청 후 취소문의는 연금관리학과 사무실 (063-219-5504)",
+   "points": 20,
+   "belts": [],
+   "deadline": null,
+   "required": false,
+   "easy": null,
+   "firstSeen": "2026-11-19T20:27+09:00"
+  },
+  {
+   "id": "main-220044",
+   "source": "교내공지",
+   "title": "[YELLOW BELT 필수] 2026년 2학기 해외취업특강(2차) 신청 안내[오늘까지!!!]",
+   "posted": "2026-11-19",
+   "url": "https://www.jbnu.ac.kr/web/Board/220044/detailView.do?pageIndex=1&menu=2377",
+   "summary": ">",
+   "points": null,
+   "belts": [
+    "YELLOW"
+   ],
+   "deadline": null,
+   "required": true,
+   "easy": null,
+   "firstSeen": "2026-11-19T20:27+09:00"
+  },
+  {
+   "id": "career-406630",
+   "source": "취업진로지원과",
+   "title": "[RED/BLUE필수]2차 직무자격증 과정 추가모집 1명 (★6시그마GB★)",
+   "posted": "2026-11-19",
+   "url": "https://career.jbnu.ac.kr/bbs/career/3682/406630/artclView.do?layout=unknown",
+   "loginRequired": true,
+   "summary": "",
+   "points": null,
+   "belts": [
+    "BLUE",
+    "RED"
+   ],
+   "deadline": "2026-11-25",
+   "required": true,
+   "easy": null,
+   "firstSeen": "2026-11-19T20:27+09:00"
+  },
   {
    "id": "main-220019",
    "source": "교내공지",
