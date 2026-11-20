@@ -1,6 +1,36 @@
 {
- "updated": "2026-11-20T05:27+09:00",
+ "updated": "2026-11-20T11:14+09:00",
  "notices": [
+  {
+   "id": "main-220064",
+   "source": "교내공지",
+   "title": "(글로컬/중앙도서관) 논문작성 집중 특강 'AI 시대의 연구 방법과 논문작성 전략' 신청 연장 안내(큰사람포인트/직원 상시학습 인정)",
+   "posted": "2026-11-20",
+   "url": "https://www.jbnu.ac.kr/web/Board/220064/detailView.do?pageIndex=1&menu=2377",
+   "summary": ">\n ﻿ \n (글로컬) 논문작성 집중 특강 'AI 시대의 연구 방법과 논문작성 전략' 안내 ○ 일 시: 26.11.17.(화) ~ 11.25.(수) 14:00-16:00 ○ 대 상: 교내 구성원, 지역 연구자 회차별 150명 ○ 내 용: 과제·논문 작성을 위한 기초 역량 함양부터 영어논문 작성 및 해외 학술지 투고 전략 까지 연계하여 체계적인 연구 설계와 실질적인 논문 작성 역량 강화를 위한 특강 ○ 신청방법: 교육별 교육 참여 신청(도서관 어플 > 프로그램 > 신청하기) \n 지역주민 신청 링크 → 바로가기(클릭 ) \n ※ 신청 기간: 특강 당일 오전 10시까지 \n ○ 상세내용: \n ④ 4일차(11.24.(화) 14:00-16:00): 영어 논문에 대한 이해와 작성법 \n - 영어논문 작성/수정 전략 - 인공",
+   "points": 10,
+   "belts": [],
+   "deadline": null,
+   "required": false,
+   "easy": null,
+   "firstSeen": "2026-11-20T11:14+09:00"
+  },
+  {
+   "id": "main-220063",
+   "source": "교내공지",
+   "title": "[YELLOW BELT 필수] 2026년 2학기 해외취업특강(2차) 추가모집(~오늘 15시까지!!)",
+   "posted": "2026-11-20",
+   "url": "https://www.jbnu.ac.kr/web/Board/220063/detailView.do?pageIndex=1&menu=2377",
+   "summary": ">",
+   "points": null,
+   "belts": [
+    "YELLOW"
+   ],
+   "deadline": null,
+   "required": true,
+   "easy": null,
+   "firstSeen": "2026-11-20T11:14+09:00"
+  },
   {
    "id": "main-220054",
    "source": "교내공지",
@@ -72,7 +102,7 @@
     "BLUE",
     "RED"
    ],
-   "deadline": "2026-11-26",
+   "deadline": "2026-11-25",
    "required": true,
    "easy": null
   },
@@ -208,7 +238,7 @@
     "BLUE",
     "RED"
    ],
-   "deadline": "2026-11-26",
+   "deadline": "2026-11-25",
    "required": true,
    "easy": null
   },
