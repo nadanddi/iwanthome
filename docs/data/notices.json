@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-22T20:09+09:00",
+ "updated": "2026-11-23T04:27+09:00",
  "notices": [
   {
    "id": "main-220064",
@@ -102,7 +102,7 @@
     "BLUE",
     "RED"
    ],
-   "deadline": "2026-11-26",
+   "deadline": "2026-11-27",
    "required": true,
    "easy": null
   },
@@ -238,7 +238,7 @@
     "BLUE",
     "RED"
    ],
-   "deadline": "2026-11-26",
+   "deadline": "2026-11-27",
    "required": true,
    "easy": null
   },
