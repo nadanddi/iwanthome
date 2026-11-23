@@ -1,6 +1,62 @@
 {
- "updated": "2026-11-23T04:27+09:00",
+ "updated": "2026-11-23T10:33+09:00",
  "notices": [
+  {
+   "id": "main-220153",
+   "source": "교내공지",
+   "title": "[연금관리학과] 2026학년도 국민연금공단 현직자 특강(1차) 사전신청 안내 (큰사람포인트 20점, 간식증정)",
+   "posted": "2026-11-23",
+   "url": "https://www.jbnu.ac.kr/web/Board/220153/detailView.do?pageIndex=1&menu=2377",
+   "summary": ">\n 1. 초청 명사 : 국민연금공단 연구위원 현직자 \n 2. 일시/장소 : 2026. 11. 23.(월) 14:00, 경상대학 2호관 402호 \n 3. 참여대상 : 전북대학교 전체 재학생 \n 4. 신청방법 : 구글폼 신청 https://forms.gle/dygQsWWMcLzZmQmX6 \n 5. 참여혜택 : 큰사람포인트 20점, 간식제공(샌드위치+음료) 신청 후 취소문의는 연금관리학과 사무실 (063-219-5504)",
+   "points": 20,
+   "belts": [],
+   "deadline": null,
+   "required": false,
+   "easy": null,
+   "firstSeen": "2026-11-23T10:33+09:00"
+  },
+  {
+   "id": "main-220151",
+   "source": "교내공지",
+   "title": "[취업진로지원과]건지포럼 6차(12.02.(수) 16:00-17:30)//큰사람포인트 20점, 통합전공탐색 1시간 인정",
+   "posted": "2026-11-23",
+   "url": "https://www.jbnu.ac.kr/web/Board/220151/detailView.do?pageIndex=1&menu=2377",
+   "summary": ">",
+   "points": 20,
+   "belts": [],
+   "deadline": null,
+   "required": false,
+   "easy": null,
+   "firstSeen": "2026-11-23T10:33+09:00"
+  },
+  {
+   "id": "main-220145",
+   "source": "교내공지",
+   "title": "(마감) 면접 집중교육 심화과정7/8차 모집 안내(졸업생 참여 가능)",
+   "posted": "2026-11-23",
+   "url": "https://www.jbnu.ac.kr/web/Board/220145/detailView.do?pageIndex=1&menu=2377",
+   "summary": ">\n 2026년 하반기 면접 집중교육 일정 및 신청 안내 취업진로지원과 홈페이지 바로가기(클릭) \n ※ 면접 집중교육 심화과정은 빠르게 모집되오니, 신청시작 시간을 확인하시어 신청하시기 바랍니다. \n ※ 취업진로지원과에서 운영하는 면접교육은 교육시간과 관계없이 1차수만 이수하시면 큰사람프로젝트 면접교육 이수됩니다.",
+   "points": null,
+   "belts": [],
+   "deadline": null,
+   "required": false,
+   "easy": null,
+   "firstSeen": "2026-11-23T10:33+09:00"
+  },
+  {
+   "id": "main-220144",
+   "source": "교내공지",
+   "title": "2027학년도 1학기 국가장학금 1차 신청 및 '신입생 전액 장학금' 안내 ['26. 11. 24.(화) - '27. 1. 7.(목)]",
+   "posted": "2026-11-23",
+   "url": "https://www.jbnu.ac.kr/web/Board/220144/detailView.do?pageIndex=1&menu=2377",
+   "summary": ">\n 2027학년도 1학기 국가장학금 1차 신청 안내 \n ○ 2027년 ' 지방 국립대학교 신입생 전액 장학금 ' 을 받기 위해서는 국가장학금을 반드시 신청 하여야 함 (붙임파일 참고) \n - 지방 국립대학교 전액 장학금 구성 : 국가장학금 지급액 + 교내장학금 + 추가지원금 \n - 국가장학금 및 교내장학금으로 등록금 전액이 충당되지 않는 경우 추가 지원금 약정 후 추가지원금을 통해 등록금 전액 지원 (자퇴, 제적 시 추가지원금 전액 환수) \n - 성적기준(국가장학금Ⅰ유형과 동일) : 직전학기 12학점 이상 이수하여 80점(B학점) 이상 취득(100점 만점 기준) \n ※ 기초 ·차상위 : 직전학기 12학점 이상 이수하여 70점(C학점) 이상 취득 \n ※ 신입생은 첫 학기에 한해 성적기준 미적용 \n 1. 신청",
+   "points": null,
+   "belts": [],
+   "deadline": "2027-01-07",
+   "required": false,
+   "easy": null,
+   "firstSeen": "2026-11-23T10:33+09:00"
+  },
   {
    "id": "main-220064",
    "source": "교내공지",
@@ -102,7 +158,7 @@
     "BLUE",
     "RED"
    ],
-   "deadline": "2026-11-27",
+   "deadline": "2026-11-25",
    "required": true,
    "easy": null
   },
@@ -238,7 +294,7 @@
     "BLUE",
     "RED"
    ],
-   "deadline": "2026-11-27",
+   "deadline": "2026-11-25",
    "required": true,
    "easy": null
   },
