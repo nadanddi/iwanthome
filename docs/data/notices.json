@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-24T22:31+09:00",
+ "updated": "2026-11-25T08:59+09:00",
  "notices": [
   {
    "id": "main-220231",
@@ -58,10 +58,9 @@
    "belts": [
     "YELLOW"
    ],
-   "deadline": "2026-11-24",
+   "deadline": "2026-11-25",
    "required": true,
-   "easy": null,
-   "firstSeen": "2026-11-24T22:31+09:00"
+   "easy": null
   },
   {
    "id": "career-406963",
@@ -76,7 +75,7 @@
     "BLUE",
     "RED"
    ],
-   "deadline": "2026-11-24",
+   "deadline": "2026-11-25",
    "required": true,
    "easy": null
   },
@@ -235,7 +234,7 @@
    "summary": "",
    "points": 20,
    "belts": [],
-   "deadline": "2026-12-02",
+   "deadline": "2026-12-03",
    "required": false,
    "easy": null
   },
@@ -1585,23 +1584,6 @@
    "posted": "2026-08-07",
    "url": "https://www.jbnu.ac.kr/web/Board/215952/detailView.do?pageIndex=1&menu=2377",
    "summary": ">\n .",
-   "points": null,
-   "belts": [
-    "BLUE",
-    "RED"
-   ],
-   "deadline": null,
-   "required": true,
-   "easy": null,
-   "firstSeen": "2026-11-11T15:49+09:00"
-  },
-  {
-   "id": "main-215577",
-   "source": "교내공지",
-   "title": "[레드/블루벨트 필수선택] 2026학년도 하계 NCS 직업기초능력평가 집중교육 참여자 모집",
-   "posted": "2026-07-27",
-   "url": "https://www.jbnu.ac.kr/web/Board/215577/detailView.do?pageIndex=1&menu=2377",
-   "summary": ">\n [레드/블루벨트 필수선택] 2026학년도 하계 NCS 직업기초능력평가 집중교육 참여자 모집",
    "points": null,
    "belts": [
     "BLUE",
