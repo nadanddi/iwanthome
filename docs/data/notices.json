@@ -1,6 +1,67 @@
 {
- "updated": "2026-11-25T08:59+09:00",
+ "updated": "2026-11-25T17:18+09:00",
  "notices": [
+  {
+   "id": "main-220256",
+   "source": "교내공지",
+   "title": "[언어교육부] 11월 외국어 강좌 특강 안내(재학생 큰사람 포인트 10점 부여)",
+   "posted": "2026-11-25",
+   "url": "https://www.jbnu.ac.kr/web/Board/220256/detailView.do?pageIndex=1&menu=2377",
+   "summary": ">\n 언어교육부에서 재학생 및 일반인분들을 위한 유익한 외국어 강좌 특강을\n JBNU 인터내셔널센터에서 다음과 같이 실시하오니 많은 참여 바랍니다 . \n ○ 참가혜택 : 재학생 큰사람 포인트 10 점 부여 (12 월 중 지급 ) \n ○ 문의 : https://pf.kakao.com/_xbYIxkK/chat ( 카카오톡 플러스친구 ) \n ○ 신청방법 아래 참조 \n <신청 바로가기> \n https://jump.jbnu.ac.kr/felelgn",
+   "points": 10,
+   "belts": [],
+   "deadline": null,
+   "required": false,
+   "easy": null,
+   "firstSeen": "2026-11-25T17:18+09:00"
+  },
+  {
+   "id": "main-220255",
+   "source": "교내공지",
+   "title": "[언어교육부] 12월 19일(토) 모의토익 실시 안내",
+   "posted": "2026-11-25",
+   "url": "https://www.jbnu.ac.kr/web/Board/220255/detailView.do?pageIndex=1&menu=2377",
+   "summary": ">\n 언어교육부에서 아래와 같이 모의토익을 실시하오니, 많은 관심 부탁드립니다. \n 1. 실시 일시: 12. 19.(토) 10:00 \n 2. 실시 장소: JBNU인터내셔널센터 5층 강의실(1층 출입문에 고사실 안내) \n 3. 응시료: 17,000원 \n 4. 접수 기간: 11. 17.(화) ~ 12. 5.(토) \n 5. 신청 방법 \n 가. 언어교육부 수강신청 사이트 로그인( https://jump.jbnu.ac.kr/felelgn )-언어교육부-수강신청-모의토익 접수 및 납부 후 \n 나. YBM사이트 접수: https://ipexam.toeic.co.kr/jbnu \n 6. 응시 혜택(학부생 해당) \n 가. 점수에 상관없이 큰사람포인트 20점 지급(1회) \n - 신청 방법: JUMP - 원스탑(대학) - 비교과",
+   "points": 20,
+   "belts": [],
+   "deadline": "2026-12-05",
+   "required": false,
+   "easy": null,
+   "firstSeen": "2026-11-25T17:18+09:00"
+  },
+  {
+   "id": "career-407183",
+   "source": "취업진로지원과",
+   "title": "[RED/BLUE필수]직무자격증 과정 모집(★6시그마GB★)-오늘18시까지",
+   "posted": "2026-11-25",
+   "url": "https://career.jbnu.ac.kr/bbs/career/3682/407183/artclView.do?layout=unknown",
+   "loginRequired": true,
+   "summary": "",
+   "points": null,
+   "belts": [
+    "BLUE",
+    "RED"
+   ],
+   "deadline": "2026-11-25",
+   "required": true,
+   "easy": null,
+   "firstSeen": "2026-11-25T17:18+09:00"
+  },
+  {
+   "id": "career-407133",
+   "source": "취업진로지원과",
+   "title": "2026 취업연계중점대학 동계 큰사람 직무체험 선발자 공지",
+   "posted": "2026-11-25",
+   "url": "https://career.jbnu.ac.kr/bbs/career/3682/407133/artclView.do?layout=unknown",
+   "loginRequired": true,
+   "summary": "",
+   "points": null,
+   "belts": [],
+   "deadline": "2026-11-25",
+   "required": false,
+   "easy": null,
+   "firstSeen": "2026-11-25T17:18+09:00"
+  },
   {
    "id": "main-220231",
    "source": "교내공지",
@@ -49,7 +110,7 @@
   {
    "id": "career-407032",
    "source": "취업진로지원과",
-   "title": "[YELLOW필수]3차 해외취업 특강 참여자 모집(오늘 23시까지!!!)-이번학기 마지막",
+   "title": "[YELLOW필수]해외취업 특강(3차) 추가모집-이번학기 마지막!!",
    "posted": "2026-11-24",
    "url": "https://career.jbnu.ac.kr/bbs/career/3682/407032/artclView.do?layout=unknown",
    "loginRequired": true,
