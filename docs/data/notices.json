@@ -1,6 +1,66 @@
 {
- "updated": "2026-11-26T04:16+09:00",
+ "updated": "2026-11-26T12:29+09:00",
  "notices": [
+  {
+   "id": "main-220296",
+   "source": "교내공지",
+   "title": "[언어교육부] 11월 외국어 강좌 특강 안내(재학생 큰사람 포인트 10점 부여)",
+   "posted": "2026-11-26",
+   "url": "https://www.jbnu.ac.kr/web/Board/220296/detailView.do?pageIndex=1&menu=2377",
+   "summary": ">\n 언어교육부에서 재학생 및 일반인분들을 위한 유익한 외국어 강좌 특강을\n JBNU 인터내셔널센터에서 다음과 같이 실시하오니 많은 참여 바랍니다 . \n ○ 참가혜택 : 재학생 큰사람 포인트 10 점 부여 (12 월 중 지급 ) \n ○ 문의 : https://pf.kakao.com/_xbYIxkK/chat ( 카카오톡 플러스친구 ) \n ○ 신청방법 아래 참조 \n <신청 바로가기> \n https://jump.jbnu.ac.kr/felelgn",
+   "points": 10,
+   "belts": [],
+   "deadline": null,
+   "required": false,
+   "easy": null,
+   "firstSeen": "2026-11-26T12:29+09:00"
+  },
+  {
+   "id": "main-220295",
+   "source": "교내공지",
+   "title": "[언어교육부] 12월 19일(토) 모의토익 실시 안내",
+   "posted": "2026-11-26",
+   "url": "https://www.jbnu.ac.kr/web/Board/220295/detailView.do?pageIndex=1&menu=2377",
+   "summary": ">\n 언어교육부에서 아래와 같이 모의토익을 실시하오니, 많은 관심 부탁드립니다. \n 1. 실시 일시: 12. 19.(토) 10:00 \n 2. 실시 장소: JBNU인터내셔널센터 5층 강의실(1층 출입문에 고사실 안내) \n 3. 응시료: 17,000원 \n 4. 접수 기간: 11. 17.(화) ~ 12. 5.(토) \n 5. 신청 방법 \n 가. 언어교육부 수강신청 사이트 로그인( https://jump.jbnu.ac.kr/felelgn )-언어교육부-수강신청-모의토익 접수 및 납부 후 \n 나. YBM사이트 접수: https://ipexam.toeic.co.kr/jbnu \n 6. 응시 혜택(학부생 해당) \n 가. 점수에 상관없이 큰사람포인트 20점 지급(1회) \n - 신청 방법: JUMP - 원스탑(대학) - 비교과",
+   "points": 20,
+   "belts": [],
+   "deadline": "2026-12-05",
+   "required": false,
+   "easy": null,
+   "firstSeen": "2026-11-26T12:29+09:00"
+  },
+  {
+   "id": "main-220294",
+   "source": "교내공지",
+   "title": "[전북국제개발협력센터] 제41차 JBNU 개발협력 세미나(인디코드) - <국토개발을 위한 토지행정 제도 개선> (큰사람포인트 & 햄버거 증정!)",
+   "posted": "2026-11-26",
+   "url": "https://www.jbnu.ac.kr/web/Board/220294/detailView.do?pageIndex=1&menu=2377",
+   "summary": ">\n ⭐JBNU 개발협력 세미나 시리즈: 인디코드(International Development Cooperation & Delights)⭐\n 🔷 '인디코드'는 국제개발협력 분야로의 진로를 희망하거나, 국제개발협력과 관련된 지식과 정보가 필요한 모든 사람이 참여할 수 있는 월례 세미나 시리즈입니다.\n 🔷 지구촌에서 발생하는 여러 문제를 해결하기 위해 각 분야의 전문가가 직접 선정한 중요하고 흥미로운 주제에 대해 다함께 의논해 볼 수 있는 시간을 가질 예정입니다!\n ​\n <제41차 인디코드 - 국토개발을 위한 토지행정 제도 개선' > 🏗️ \n 🔹 일 시 : 2026년 12월 02일 (수), 11:00-13:30\n 🔹 장 소 : 전북대학교 JBNU 인터내셔널 센터 2층 201호 강의실 및 ZOOM (온라인)\n ",
+   "points": 10,
+   "belts": [],
+   "deadline": null,
+   "required": false,
+   "easy": "온라인 참여",
+   "firstSeen": "2026-11-26T12:29+09:00"
+  },
+  {
+   "id": "career-407213",
+   "source": "취업진로지원과",
+   "title": "[RED/BLUE필수]직무자격증 과정 추가모집(★엑셀데이터분석★)-오늘18시까지",
+   "posted": "2026-11-26",
+   "url": "https://career.jbnu.ac.kr/bbs/career/3682/407213/artclView.do?layout=unknown",
+   "loginRequired": true,
+   "summary": "",
+   "points": null,
+   "belts": [
+    "BLUE",
+    "RED"
+   ],
+   "deadline": "2026-11-26",
+   "required": true,
+   "easy": null,
+   "firstSeen": "2026-11-26T12:29+09:00"
+  },
   {
    "id": "main-220256",
    "source": "교내공지",
@@ -56,7 +116,7 @@
    "summary": "",
    "points": null,
    "belts": [],
-   "deadline": "2026-11-26",
+   "deadline": null,
    "required": false,
    "easy": null
   },
@@ -117,7 +177,7 @@
    "belts": [
     "YELLOW"
    ],
-   "deadline": "2026-11-26",
+   "deadline": null,
    "required": true,
    "easy": null
   },
