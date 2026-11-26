@@ -1,6 +1,23 @@
 {
- "updated": "2026-11-26T12:29+09:00",
+ "updated": "2026-11-27T01:49+09:00",
  "notices": [
+  {
+   "id": "main-220306",
+   "source": "교내공지",
+   "title": "취업선배의 취업노하우 전달 [재학생-졸업생 멘토링(2차)] 참여신청 안내[BLUE/RED BELT]",
+   "posted": "2026-11-26",
+   "url": "https://www.jbnu.ac.kr/web/Board/220306/detailView.do?pageIndex=1&menu=2377",
+   "summary": ">",
+   "points": null,
+   "belts": [
+    "BLUE",
+    "RED"
+   ],
+   "deadline": null,
+   "required": false,
+   "easy": null,
+   "firstSeen": "2026-11-27T01:49+09:00"
+  },
   {
    "id": "main-220296",
    "source": "교내공지",
