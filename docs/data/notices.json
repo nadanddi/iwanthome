@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-27T21:00+09:00",
+ "updated": "2026-11-28T06:10+09:00",
  "notices": [
   {
    "id": "main-220391",
@@ -59,10 +59,9 @@
    "belts": [
     "YELLOW"
    ],
-   "deadline": "2026-12-10",
+   "deadline": "2026-12-11",
    "required": true,
-   "easy": null,
-   "firstSeen": "2026-11-27T21:00+09:00"
+   "easy": null
   },
   {
    "id": "main-220306",
