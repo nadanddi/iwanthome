@@ -1,6 +1,69 @@
 {
- "updated": "2026-11-27T10:40+09:00",
+ "updated": "2026-11-27T21:00+09:00",
  "notices": [
+  {
+   "id": "main-220391",
+   "source": "교내공지",
+   "title": "[YELLOW BELT 필수선택] 진로설정캠프(3차) 참여자 모집(~12.10.)",
+   "posted": "2026-11-27",
+   "url": "https://www.jbnu.ac.kr/web/Board/220391/detailView.do?pageIndex=1&menu=2377",
+   "summary": ">",
+   "points": null,
+   "belts": [
+    "YELLOW"
+   ],
+   "deadline": null,
+   "required": true,
+   "easy": null,
+   "firstSeen": "2026-11-27T21:00+09:00"
+  },
+  {
+   "id": "main-220389",
+   "source": "교내공지",
+   "title": "(끌어올림)[행복드림] 마음산책특강 6 - '자존감 향상' 프로그램 안내",
+   "posted": "2026-11-27",
+   "url": "https://www.jbnu.ac.kr/web/Board/220389/detailView.do?pageIndex=1&menu=2377",
+   "summary": ">\n ● 마음산책특강 6 '자 존감 향상' \n 바쁜 대학생활 속에서 나도 모르게 다른 사람과 자신을 비교하거나, 스스로에게 지나치게 엄격해진 적은 없으신가요? \n 이번 마음산책특강에서는 있는 그대로의 나를 이해하고, 자신의 강점과 가치를 발견하며 건강한 자존감을 키우는 방법을 함께 알아보고자 합니다. \n * 위와 같은 고민에 대해 도움을 받고 싶으신 분들이 자신을 이해할 수 있도록 돕는 특강입니다. \n * 특강 후에 만족도 조사를 마치시면 큰사람포인트 5점을 지급하고 있습니다. \n ● 신청안내 \n - 일 시 : 12/3(목) 오후 12시 ~ 1시 50분 (2H) \n - 장 소 : 진수당 교육연구동 305호 (3층, 편의점 & 카페 건물) \n - 신청방법 : 행복드림센터 홈페이지 - 지원프로그램 신청 (클릭)",
+   "points": 5,
+   "belts": [],
+   "deadline": null,
+   "required": false,
+   "easy": null,
+   "firstSeen": "2026-11-27T21:00+09:00"
+  },
+  {
+   "id": "main-220371",
+   "source": "교내공지",
+   "title": "[BLUE BELT] 입사지원서 작성법 집중교육 참여자 모집 안내(마지막 차수)",
+   "posted": "2026-11-27",
+   "url": "https://www.jbnu.ac.kr/web/Board/220371/detailView.do?pageIndex=1&menu=2377",
+   "summary": ">\n 2026년 하반기 입사지원서 작성법 집중교육 일정 및 신청 안내 \n <수료 기준> ① 기초과정: 입사지원서 작성법 집중교육(3시간) 100% 참여 + 교육 후 입사지원서 클리닉(온라인 시스템) 참여 + 만족도 조사 참여 ※ 입사지원서 클리닉은 작성한 입사지원서를 온라인으로 제출하여 48시간 이내로 피드백을 받는 입사지원서 코칭 시스템입니다. ② 심화과정: 입사지원서 작성법 집중교육(3시간) 및 1:1 컨설팅(약 20분) 참여 + 만족도 조사 참여 ※ 1:1 컨설팅에는 작성한 자기소개서를 지참하여 참여해야 합니다. \n <참고> \n① 자기소개서(입사지원서) 양식은 본인이 희망하는 기업의 양식을 활용하거나 첨부되어 있는 입사지원서 양식을 활용하여 작성하시기 바랍니다.\n ② 공결요청서는 프로그램 신청 시 신청",
+   "points": null,
+   "belts": [
+    "BLUE"
+   ],
+   "deadline": null,
+   "required": false,
+   "easy": null,
+   "firstSeen": "2026-11-27T21:00+09:00"
+  },
+  {
+   "id": "career-407364",
+   "source": "취업진로지원과",
+   "title": "[YELLOW BELT 필수선택] 2026학년도 2학기 진로설정캠프(3차) 참여자 모집",
+   "posted": "2026-11-27",
+   "url": "https://career.jbnu.ac.kr/bbs/career/3682/407364/artclView.do?layout=unknown",
+   "loginRequired": true,
+   "summary": "",
+   "points": null,
+   "belts": [
+    "YELLOW"
+   ],
+   "deadline": "2026-12-10",
+   "required": true,
+   "easy": null,
+   "firstSeen": "2026-11-27T21:00+09:00"
+  },
   {
    "id": "main-220306",
    "source": "교내공지",
